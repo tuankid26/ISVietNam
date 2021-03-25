@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="assets/style_2.css">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+</head>
+
+<body>
+    <div class="center">
+        <fieldset style="width: min-content;">
+            <legend>Information</legend>
+            <form action="helloworld.php" method="POST">
+                <label for="name">Name: </label><br>
+                <input type="text" id="name" name="name"><br>
+                <label for="birthday">Birthday: </label><br>
+                <input type="date" id="birthday" name="birthday"><br>
+                <label for="email">Email: </label><br>
+                <input type="text" id="email" name="email"><br>
+                <label for="phone">Phone Number: </label><br>
+                <input type="tel" id="phone" placeholder="0123456789" pattern="[0-9]{4}[0-9]{3}[0-9]{3}"
+                    name="phone"><br>
+                <label for="class">Class: </label><br>
+                <input type="text" id="class" name="class"><br>
+                <label for="university">University: </label><br>
+                <input type="text" id="university" name="university"><br>
+                <fieldset style="width: min-content;">
+                    <legend>Hobby</legend>
+                    <label for="hobby1">Game</label><br>
+                    <input type="checkbox" id="hobby1" name="hobby[]" value="Game"><br>
+                    <label for="hobby2">Swim</label><br>
+                    <input type="checkbox" id="hobby2" name="hobby[]" value="Swim"><br>
+                    <label for="hobby3">Soccer</label><br>
+                    <input type="checkbox" id="hobby3" name="hobby[]" value="Soccer"><br>
+                    <label for="hobby4">Reading</label><br>
+                    <input type="checkbox" id="hobby4" name="hobby[]" value="Reading"><br>
+                </fieldset>
+                <button type="submit">Submit</button>
+            </form>
+        </fieldset>
+    </div>
+</body>
+
+</html>

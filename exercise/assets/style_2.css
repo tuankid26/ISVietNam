@@ -1,0 +1,12 @@
+fieldset {
+    background-color:azure;
+    
+}
+
+button{
+    background-color: cornflowerblue;
+}
+.center{
+    display: flex;
+    justify-content: center;
+}
