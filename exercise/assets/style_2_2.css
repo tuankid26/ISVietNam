@@ -6,6 +6,9 @@ body {
     justify-content: center;
 }
 form {
+    position: relative;
+    border-radius: 20px;
+    background-color: rgb(252, 243, 232);
         box-shadow: 
     0 1px 1px rgba(0,0,0,0.15),
     0 10px 0 -5px #eee,
@@ -31,6 +34,43 @@ form {
 }
 
 
-.button{
+.submit-button {
+    display: inline-block;
+    font-size: 15px;
+    cursor: pointer;
     text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 5px #999;
+    background-color: #4CAF50;
+  }
+.submit-button:hover {background-color: #3e8e41}
+
+.submit-button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(2px);
+}
+.reset-button {
+    display: inline-block;
+    font-size: 15px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 5px #999;
+    background-color: #4CAF50;
+  }
+.reset-button:hover {background-color: #3e8e41}
+
+.reset-button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(2px);
 }
