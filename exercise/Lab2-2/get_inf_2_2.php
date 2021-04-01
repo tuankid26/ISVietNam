@@ -1,10 +1,9 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="./assets/style_2_2.css">
+    <link rel="stylesheet" href="./style_2_2.css">
 </head>
-
-<body>
+<body>  
     <?php
     $post = $_POST;
     if (isset($post['name']))
@@ -83,6 +82,7 @@
             echo ('You have choose to have an appointment on <b>' . $second . ':' . $minute . ':' . $hour . ' ' . $day . '/' . $month . '/' . $year . '</b>');
             echo ('<br><br>More information:<br><br>');
             echo ('In 12 hours, the time and date is ');
+            $days = cal_days_in_month(CAL_GREGORIAN, intval($month), intval($year));
             if ($hour > 12) {
 
                 echo ('<b>' . $second . ':' . $minute);
@@ -96,11 +96,8 @@
                 echo ('This month has 31 days!');
             } elseif (in_array($month, $m30)) {
                 echo ('This month has 30 days!');
-            } elseif ($month % 4 == 0 and $month % 100 != 0) {
-                echo ('This month has 28 days!');
-            } else {
-                echo ('This month has 29 days!');
             }
+            echo("This month has ".$days." days");
         }
 
         ?>
