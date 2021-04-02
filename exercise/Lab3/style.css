@@ -1,0 +1,21 @@
+label#red {
+    font-size: 50px;
+    font-family: cursive;
+    margin: 190px;
+    text-shadow: 2px 2px 5px red;
+}
+label#green {
+    font-size: 50px;
+    font-family: cursive;
+    margin: 190px;
+    text-shadow: 2px 2px 5px green;
+}
+label#blue   {
+    font-size: 50px;
+    font-family: cursive;
+    margin: 190px;
+    text-shadow: 2px 2px 5px blue;
+}
+.paper{
+    text-align: center;
+}
