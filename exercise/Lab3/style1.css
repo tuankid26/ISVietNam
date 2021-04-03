@@ -1,0 +1,96 @@
+body{
+    background-color: whitesmoke;
+}
+h1 {
+    text-align: center;
+    font-family: cursive;
+    color: green;
+}
+form{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    
+    width: 50%;
+    margin: auto;
+    line-height: 2rem;
+
+}
+input[type="text"], input[type="email"], input[type="date"]{
+    background-color: #fff;
+    height: 2rem;
+    border-collapse: collapse;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 1px solid;
+    outline: none;
+    
+}
+
+#submit-reset{
+    margin: auto;
+}
+
+ul,li { list-style-type: none;
+    list-style-position: inside;
+    margin:0;
+    padding:0;
+}
+label[for="name"], label[for="dob"] ,label[for="class"], 
+label[for="uni"], label[for="hobbies"], label[for="email"], 
+label[for="address"], label[for="phone"], label[for="skills"]{
+    font-weight: bold;
+}
+
+#hobbies-skills{
+    
+    display: flex;
+    justify-content: space-between;
+}
+
+li input{
+    margin-left: 1rem;
+    margin-top: 0.6rem;
+    float: right;
+    vertical-align: middle;
+    
+}
+
+li input#others, li input#other_skills{
+    height: 0.8rem;
+    word-wrap: break-word;
+}
+#name-profile{
+    display: flex;
+    justify-content: space-between;
+    
+}
+#name-profile #flex-column-name{
+    width: 50%;
+    max-width: inherit;
+}
+#name-profile .flex-column{
+    display: flex;
+    flex-direction: column;
+}
+button {
+    width: 80px;
+    height: 40px;
+    border-radius: 15px;
+    box-shadow: 0 5px #999;
+    cursor: pointer;
+    margin: 30px;
+}
+button:hover{
+    background-color: aqua;
+}
+button:active{
+    background-color: aquamarine;
+    box-shadow: 0 5px #666;
+    transform: translateY(2px);
+}
+
+input {
+    padding-left: 10px;
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="./style1.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>REGISTER FORM</h1>
+    <form action="">
+        <div id="name-profile">
+            <div class="flex-column" id="flex-column-name">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+            </div>
+            <div class="flex-column">
+                <label for="profile">Upload profile</label>
+                <input type="file" name="profile" id="profile">
+            </div>
+        </div>
+        <label for="dob">Date of birth</label>
+        <input type="date" name="dob" id="dob" required>
+        <label for="class">Class</label>
+        <input type="text" id="class" name="class" placeholder="Enter your class" required>
+        <label for="uni">University</label>
+        <input type="text" id="uni" name="uni" placeholder="Enter your university" required>
+        
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+        <label for="address">Address</label>
+        <input type="text" id="address" name="address" placeholder="Enter your address">
+        <label for="phone">Phone number</label>
+        <input type="text" id="phone" name="phone" placeholder="Enter your phone number" pattern="[0]{1}[0-9]{3}[0-9]{3}[0-9]{3}">
+        <div class="skills">
+            <label for="skills">Skills</label> 
+            <ul id="skills">
+                <li class="skill-item">
+                    <label for="math">Mathematics</label>
+                    <input type="checkbox" name="skills[]" id="math" value="Mathematics">
+                </li>
+                <li class="skill-item">
+                    <label for="programming">Programming</label>
+                    <input type="checkbox" name="skills[]" id="programming" value="Programming">
+                </li>
+                <li class="skill-item">
+                    <label for="ai">AI</label>
+                    <input type="checkbox" name="skills[]" id="ai" value="AI">
+                </li>
+                <li class="skill-item">
+                    <label for="algo">Algorithm</label>
+                    <input type="checkbox" name="skills[]" id="algo" value="Algorithm">
+                </li>
+                <li class="skill-item">
+                    <label for="design">Pattern design</label>
+                    <input type="checkbox" name="skills[]" id="design" value="Pattern design">
+                </li>
+                <li class="skill-item">
+                    <label for="oop">OOP</label>
+                    <input type="checkbox" name="skills[]" id="oop" value="OOP">
+                </li>
+                <li class="skill-item">
+                    <label for="present">Presentation</label>
+                    <input type="checkbox" name="skills[]" id="present" value="Presentation">
+                </li>
+                <li class="skill-item">
+                    <label for="team">Teamwork</label>
+                    <input type="checkbox" name="skills[]" id="team" value="Teamwork">
+                </li>
+                <li class="skill-item">
+                    <label for="other_skills">Others</label>
+                    <input type="text" name="other_skills" id="other_skills">
+                </li>
+            </ul>
+            </div>
+            <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
