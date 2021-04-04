@@ -1,0 +1,51 @@
+.search-box {
+    box-shadow: 1px 1px 4px rgb(0 0 0 / 20%);
+    transition: transform .4s;
+    border-radius: 5px;
+    display: flex;
+}
+.search-location {
+    width: 300px;
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+}
+input {
+    -webkit-writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    color: -internal-light-dark(black, white);
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    appearance: textfield;
+    background-color: -internal-light-dark(rgb(255, 255, 255), rgb(59, 59, 59));
+    -webkit-rtl-ordering: logical;
+    cursor: text;
+    margin: 0em;
+    font: 400 13.3333px Arial;
+    padding: 1px 2px;
+    border-width: 2px;
+    border-style: inset;
+    border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+    border-image: initial;
+}
+.bold, .coupon__action, .coupon__code {
+    font-weight: 700;
+}
+.searching__input-text {
+    border: 0;
+    box-shadow: none;
+    padding: 0;
+    font-size: 1rem;
+    height: auto;
+    line-height: 1.5;
+    border-radius: 0!important;
+}
+.search-field__wrap .booking__input-text {
+    font-size: 14px;
+}
+
