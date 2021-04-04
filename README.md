@@ -1,8 +1,14 @@
 # ISVietNam
 
 Lệnh :
-cd client 
+'''bash
+cd client
+'''
 
+'''bash
 npm install 
+'''
 
+'''bash
 npm start 
+'''
