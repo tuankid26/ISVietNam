@@ -1,21 +1,20 @@
 <?php 
     class Database {
-        private $host = "localhost";
-        private $database_name = "test";
-        private $username = "root";
-        private $password = "";
+        const host = "localhost";
+        const database_name = "test";
+        const username = "root";
+        const password = "";
 
-        public $conn;
-
-        public function getConnection(){
-            $this->conn = null;
+        private static $instance = NULL;
+        public static function getConnection(){
+            if (!isset(self::$instance))
             try{
-                $this->conn = new PDO("mysql:host=" . $this->host . ";dbname=" . $this->database_name, $this->username, $this->password);
-                $this->conn->exec("set names utf8");
+                self::$instance = new PDO("mysql:host=" . self::host . ";dbname=" . self::database_name, self::username, self::password);
+                self::$instance->exec("set names utf8");
             }catch(PDOException $exception){
                 echo "Database could not be connected: " . $exception->getMessage();
             }
-            return $this->conn;
+            return self::$instance;
         }
     }  
 ?>
