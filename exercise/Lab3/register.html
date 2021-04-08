@@ -13,7 +13,7 @@
         <div id="name-profile">
             <div class="flex-column" id="flex-column-name">
                 <label for="name">Name</label>
-                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                <input type="text" id="name" name="name" placeholder="Enter your full name" required pattern="[^0-9]">
             </div>
             <div class="flex-column">
                 <label for="profile">Upload profile</label>
@@ -28,7 +28,7 @@
         <input type="text" id="uni" name="uni" placeholder="Enter your university" required>
         
         <label for="email">Email</label>
-        <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+        <input type="email" id="email" name="email" placeholder="Enter your email address" required pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
         <label for="address">Address</label>
         <input type="text" id="address" name="address" placeholder="Enter your address">
         <label for="phone">Phone number</label>
