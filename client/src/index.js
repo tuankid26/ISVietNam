@@ -1,13 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-// import App from './App';
-import Login from './Components/login/login.jsx'
+import App from './App';
+import Hotel from  './pages/Hotel'
+// import Login from './Components/login/login.jsx'
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Login />
+    <Hotel />
   </React.StrictMode>,
   document.getElementById('root')
 );

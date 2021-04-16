@@ -1,0 +1,100 @@
+
+#headerSlider .slick-slide, .gallery, .room-slide img {
+    height: 190px;
+}
+@media (min-width: 575px)  { 
+    #headerSlider .slick-slide, .gallery, .room-slide img {
+    height: 400px;
+}}
+.gallery {
+    position: relative;
+    transition: background .2s;
+}
+
+.slick-slider {
+    position: relative;
+    touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.slick-slider {
+    box-sizing: border-box;
+}
+
+.slick-list {
+    position: relative;
+    overflow: hidden;
+    margin-left: -6px!important;
+    margin-right: -6px!important;
+    padding: 0;
+}
+
+.slick-list {
+    margin: 0;
+}
+.slick-track {
+    opacity: 1;
+    width: 80000px;
+    transform: translate3d(0px, 0px, 0px);
+}
+
+.slick-track {
+    position: relative;
+    left: 0;
+    top: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+.slick-slide {
+    float: left;
+    height: 100%;
+    min-height: 1px;
+    padding-left: 6px;
+    padding-right: 6px;
+   
+}
+.gallery .hotel-id {
+    position: absolute;
+    top: 0;
+    right: 24px;
+}
+.hotel-id {
+    position: relative;
+}
+.gallery .hotel-id__wrapper {
+    background-color: rgba(0,0,0,.86);
+    color: #fff;
+}
+
+.hotel-id__wrapper {
+    top: 0;
+    right: 0;
+    width: 80px;
+    border-radius: 3px;
+    position: relative;
+    background-color: rgba(246,94,57,.1);
+    padding: 2px 10px;
+    color: #f65e39;
+}
+.d-inline-block {
+    display: inline-block!important;
+}
+.text-center {
+    text-align: center;
+}
+
+.bold, .coupon__action, .coupon__code {
+    font-weight: 700;
+}
+
+.mb--0 {
+    margin-bottom: 0!important;
+}
+
+.p--small-2 {
+    font-size: 12px!important;
+}
+
+p {
+    margin: 0 0 1rem;
+}
