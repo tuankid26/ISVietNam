@@ -26,10 +26,10 @@ class Business
         $q = 'INSERT INTO businesses (BusinessID ,Name, Address, City, Telephone, URL) VALUES (\'' . $id . '\',\'' . $name . '\',\'' . $add . '\',\'' . $city . '\',\'' . $tele . '\',\'' . $url . '\')';
         // echo $q;
         $db->query($q);
-        var_dump($name_cat);
+        // var_dump($name_cat);
         foreach ($name_cat as $name) {
-            $q_ = 'INSERT INTO biz_categories (BusinessID, Categories) VALUES (\'' . $id . '\',\'' . $name . '\')';
-            echo $q_;
+            $q_ = 'INSERT INTO biz_categories (BusinessID, Category) VALUES (\'' . $id . '\',\'' . $name . '\')';
+            // echo $q_;
             $db->query($q_);
         }
     }

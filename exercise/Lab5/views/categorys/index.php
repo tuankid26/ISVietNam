@@ -45,9 +45,9 @@
                 echo '</tr>';
             } ?>
             <tr>
-                <td><input type="text" name="id"></td>
-                <td><input type="text" name="title"></td>
-                <td><input type="text" name="des"></td>
+                <td><input type="text" name="id" require></td>
+                <td><input type="text" name="title" require></td>
+                <td><input type="text" name="des" require></td>
             </tr>
             <tr>
                 <td style="text-align: left;"><button type="submit">Add category</button></td>

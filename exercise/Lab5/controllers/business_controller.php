@@ -1,7 +1,7 @@
 <?php
 require_once('controllers/base_controller.php');
 require_once('models/business.php');
-
+require_once('models/category.php');
 class BusinessController extends BaseController
 {
     function __construct()
@@ -10,7 +10,8 @@ class BusinessController extends BaseController
     }
     public function index()
     {
-        $data = array();
+        $categories = Category::all();
+        $data = array('category' => $categories);
         $this->render('index', $data);
     }
     public function add()
