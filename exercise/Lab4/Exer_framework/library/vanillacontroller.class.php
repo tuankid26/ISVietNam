@@ -17,6 +17,7 @@ class VanillaController {
 		$this->_action = $action;
 		
 		$model = ucfirst($inflect->singularize($controller));
+		// echo $model;
 		$this->doNotRenderHeader = 0;
 		$this->render = 1;
 		$this->$model = new $model();

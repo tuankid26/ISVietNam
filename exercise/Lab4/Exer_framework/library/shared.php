@@ -100,7 +100,10 @@ function callHook() {
 	}
 	
 	$controllerName = ucfirst($controller).'Controller';
-
+	// echo $controller.'<br>';
+	// echo $action.'<br>';
+	// var_dump($queryString);
+	// echo $controllerName.'<br>';
 	$dispatch = new $controllerName($controller,$action);
 	
 	if ((int)method_exists($controllerName, $action)) {
@@ -113,9 +116,13 @@ function callHook() {
 }
 
 
-/** Autoload any classes that are required **/
+/** Autoload any classes that are required **/	
 
 function __autoload($className) {
+	// echo ROOT. '<br>';
+	// echo DS.'<br>';
+	// echo ROOT . DS . 'library' . DS . strtolower($className) . '.class.php<br>';
+	// echo '--------------------------<br>';
 	if (file_exists(ROOT . DS . 'library' . DS . strtolower($className) . '.class.php')) {
 		require_once(ROOT . DS . 'library' . DS . strtolower($className) . '.class.php');
 	} else if (file_exists(ROOT . DS . 'application' . DS . 'controllers' . DS . strtolower($className) . '.php')) {
@@ -157,6 +164,3 @@ setReporting();
 // removeMagicQuotes();
 unregisterGlobals();
 callHook();
-
-
-?>

@@ -25,6 +25,7 @@ class HTML {
 
 	function link($text,$path, $prompt = null, $confirmMessage = "Are you sure?") {
 		$path = str_replace(' ','-',$path);
+		// echo $path;
 		if ($prompt) {
 
 	
@@ -34,7 +35,8 @@ class HTML {
 		} else {
 
 			
-				$data = '<a href="'.BASE_PATH.'/'.$path.'">'.$text.'</a>';	
+				$data = '<a href="'.BASE_PATH.$path.'">'.$text.'</a>';	
+				// echo BASE_PATH.$path.'">'.$text;
 			
 			
 		}
