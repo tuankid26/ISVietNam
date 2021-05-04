@@ -2,7 +2,7 @@ import React from "react";
 import { Component } from "react";
 import "./header.css"
 import Search from '../search/search'
-// import logo from '../'
+import logo from '../../images/logo.jpg'
 class Header extends Component {
       state = {
         query: '',
@@ -48,7 +48,7 @@ class Header extends Component {
             <div className = 'container-fix'>
               <nav className = 'container container--pall flex flex-jc-sb flex-ai-c'>
                 <a href="/" class="header__logo">
-                  <img  alt =' ISVietNam'  />
+                  <img src={logo} alt =' ISVietNam'  />
                 </a>
                 {/* <a id="btnHamburger" href="#" class="header__toggle hide-for-desktop">
                   <span></span>
