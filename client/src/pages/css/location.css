@@ -1,12 +1,9 @@
 .container--md {
     max-width: calc(1520px + 5.6rem);
-}
-
-
-.container {
     margin: auto;
     padding: 0 1.25rem;
 }
+
 
 .mt--30 {
     margin-top: 30px!important;

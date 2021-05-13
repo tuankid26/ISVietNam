@@ -1,25 +1,3 @@
-html {
-  font-size: 100%;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-*, *::before, *::after {
-  -webkit-box-sizing: inherit;
-          box-sizing: inherit;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Public Sans', sans-serif;
-  font-size: 0.875rem;
-  font-weight: 300;
-  color: #9698a6;
-  line-height: 1.3;
-  min-height: 350vh;
-  overflow-x: hidden;
-}
 
 @media (min-width: 64em) {
   body {
@@ -31,29 +9,17 @@ body.noscroll {
   overflow: hidden;
 }
 
-h1, h2, h3 {
-  font-weight: 300;
-  line-height: 1.15;
-  color: #2d314d;
-  margin-top: 0px;
-}
-
-h1 {
-  font-size: 2.31rem;
-  margin-bottom: 1.5rem;
-}
-
 @media (min-width: 64em) {
   h1 {
     font-size: 3.25rem;
   }
-}
+
 
 h2 {
   font-size: 1.875rem;
   margin-bottom: 1.5625rem;
 }
-
+}
 @media (min-width: 64em) {
   h2 {
     font-size: 2.25rem;
@@ -61,21 +27,10 @@ h2 {
   }
 }
 
-p {
-  line-height: 1.5;
-  margin-bottom: 2.25rem;
-}
-
-a, a:visited, a:hover {
-  text-decoration: none;
-}
-
-.container {
-  max-width: 69.375rem;
-  margin: 0 auto;
-}
 
 .container--pall {
+  max-width: 69.375rem;
+  margin: 0 auto;
   padding-top: 4.375rem;
   padding-right: 1.5rem;
   padding-bottom: 4.375rem;
@@ -340,15 +295,7 @@ button:hover::before, .button:hover::before {
   margin-bottom: 1.875rem;
   display: inline-block;
 }
-a, a:visited, a:hover {
-  text-decoration: none;
 }
-user agent stylesheet
-a:-webkit-any-link {
-  color: -webkit-link;
-  cursor: pointer;
-  text-decoration: underline;
-}}
 @media (max-width: 63.9375em){
 .footer__social {
   margin-bottom: 1.875rem;
@@ -357,7 +304,7 @@ a:-webkit-any-link {
   -webkit-box-sizing: inherit;
   box-sizing: inherit;
 }
-user agent stylesheet
+
 div {
   display: block;
 }}

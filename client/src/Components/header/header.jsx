@@ -9,23 +9,23 @@ class Header extends Component {
         data: [],
     }
 
-    handleInputChange = () => {
-        this.setState({
-            query: this.search.value
-        })
-        this.filterArray();
-    }
+    // handleInputChange = () => {
+    //     this.setState({
+    //         query: this.search.value
+    //     })
+    //     this.filterArray();
+    // }
 
-    getData = () => {
-        fetch(`http://localhost:3000`)
-        .then(response => response.json())
-        .then(responseData => {
+    // getData = () => {
+    //     fetch(`http://localhost/ISVIETNAM/api/home`)
+    //     .then(response => response.json())
+    //     .then(responseData => {
           
-            this.setState({
-                data:responseData
-            })
-        })
-    }
+    //         this.setState({
+    //             data:responseData
+    //         })
+    //     })
+    // }
 
     // filterArray = () => {
     //     var searchString = this.state.query;
@@ -38,9 +38,9 @@ class Header extends Component {
     //     }
     // }
 
-    componentWillMount() {
-        this.getData();
-    }
+    // componentWillMount() {
+    //     this.getData();
+    // }
   render() {
     return(
       <header className= "header">
@@ -50,11 +50,11 @@ class Header extends Component {
                 <a href="/" class="header__logo">
                   <img src={logo} alt =' ISVietNam'  />
                 </a>
-                {/* <a id="btnHamburger" href="#" class="header__toggle hide-for-desktop">
+                <a id="btnHamburger" href="/" class="header__toggle hide-for-desktop">
                   <span></span>
                   <span></span>
                   <span></span>
-                </a> */}
+                </a>
                  <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4">
                   <Search 
                     valueSearch={this.state.valueSearch}

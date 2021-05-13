@@ -1,16 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Home from './pages/Home';
-// import App from './App'
+// import Home from './pages/Home';
 // import Hotel from  './pages/Hotel'
 // import Login from './Components/login/login.jsx'
 // import Location from './pages/Location'
 import reportWebVitals from './reportWebVitals';
+import App from './App';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Home />
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );

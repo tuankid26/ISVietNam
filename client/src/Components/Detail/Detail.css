@@ -1,12 +1,9 @@
 .container--hotel {
     max-width: calc(1100px + 5.6rem);
-}
-
-
-.container {
     margin: auto;
     padding: 0 1.25rem;
 }
+
 .detail-left {
     padding-right: 50px;
 }

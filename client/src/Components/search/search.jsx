@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-
+import './search.css'
 class Search extends Component {
   render() {
     return(
@@ -16,7 +16,7 @@ class Search extends Component {
         
         <span className="input-group-btn">
           <button 
-            className="btn btn-info" 
+            className="btn btn-info " 
             type="button"
             onClick={()=>this.props.handleSearch('')}
           >

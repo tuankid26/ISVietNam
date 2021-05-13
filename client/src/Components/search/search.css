@@ -6,11 +6,12 @@
 }
 .search-location {
     width: 300px;
+    height: auto;
     flex: 1 1 auto;
     display: flex;
     flex-direction: column;
 }
-input {
+.searching__input-text {
     -webkit-writing-mode: horizontal-tb !important;
     text-rendering: auto;
     color: -internal-light-dark(black, white);
@@ -32,7 +33,9 @@ input {
     border-style: inset;
     border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
     border-image: initial;
+    position: absolute;
 }
+
 .bold, .coupon__action, .coupon__code {
     font-weight: 700;
 }
@@ -49,3 +52,6 @@ input {
     font-size: 14px;
 }
 
+.btn-info {
+    left: 200px;
+}

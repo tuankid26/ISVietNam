@@ -1,7 +1,7 @@
 import React from 'react'
 import {Component} from 'react'
 import './Detail.css'
-import arrow from './icon-arrow.png'
+// import arrow from './icon-arrow.png'
 class Detail extends Component {
 
     render () {

@@ -1,12 +1,11 @@
 import React from "react";
 import { Component } from "react";
-import "./css/Home.css"
-import logo from '../images/logo.jpg'
-import Search from '../Components/search/search.jsx'
+import axios from 'axios';
 import Slideshow from '../Components/slideshow/slideshow.jsx'
 import img1 from '../images/hanoi.jpg';
 import img2 from '../images/hochiminh.jpg';
 import img3 from '../images/danang.jpg';
+import Header from '../Components/header/header'
 import Footer from '../Components/footer/footer.jsx';
 import Feature from '../Components/feature/feature.jsx'
 import Article from '../Components/article/article.jsx'
@@ -18,10 +17,24 @@ const collection = [
 
 ];
 
-class App extends Component {
+class Home extends Component {
   state = {
     query: '',
     data: [],
+    number_place : []
+
+}
+
+componentDidMount() {
+  axios.get(`http://localhost/ISVIETNAM/api/home`)
+    .then(res => {
+      const number_place = res.data.data.row.sum;
+      console.log({number_place})
+      
+      this.setState({ number_place });
+    
+    })
+    .catch(error => console.log(error));
 }
 
 handleInputChange = () => {
@@ -57,47 +70,10 @@ componentWillMount() {
     this.getData();
 }
   render() {
+    
     return(
       <div className = 'Home'>
-      <header className= "header">
-          <div className = 'header-top'>
-            <div className = 'container-fix'>
-              <nav className = 'container container--pall flex flex-jc-sb flex-ai-c'>
-                <a href="/" class="header__logo">
-                  <img src={logo} alt =' ISVietNam'  />
-                </a>
-                {/* <a id="btnHamburger" href="#" class="header__toggle hide-for-desktop">
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                </a> */}
-                <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4">
-            <Search 
-              valueSearch={this.state.valueSearch}
-              handleSearch={this.handleSearch}
-            />
-          </div>
-            
-                 <div class="header__links hide-for-mobile">
-                  <a href='/'>Home</a>
-                  <a href='/'>News</a>
-                  <a href='/'>Discover</a>
-                  <a href='/'>Sign in</a>
-                  <a href='/'>Sign up</a>
-              </div>
-              </nav>
-             
-              <div class="header__menu has-fade">
-                  <a href="/">Home</a>
-                  <a href="/">About</a>
-                  <a href="/">Contact</a>
-                  <a href="/">Blog</a>
-                  <a href="/">Careers</a>
-              </div>
-            </div>
-
-        </div>
-      </header>
+      <Header></Header>
       <Slideshow
           input={collection}
           ratio={`3:2`}
@@ -113,4 +89,4 @@ componentWillMount() {
 
 }
 
-export default App ;
+export default Home ;
