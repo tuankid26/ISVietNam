@@ -120,7 +120,7 @@ class Request {
      * @return string
      */
     public function getUrl() {
-        return str_replace('/REST','',$this->server('REQUEST_URI'));
+        return str_replace('/ISVIETNAM/api','',$this->server('REQUEST_URI'));
     }
 
     /**
