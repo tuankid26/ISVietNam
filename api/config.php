@@ -18,14 +18,13 @@ define('SCRIPT', str_replace('\\', '/', rtrim(__DIR__, '/')) . '/');
 define('SYSTEM', SCRIPT . 'System/');
 define('CONTROLLERS', SCRIPT . 'Application/Controllers/');
 define('MODELS', SCRIPT . 'Application/Models/');
-define('UPLOAD', SCRIPT . 'Upload/');
 
 // Config Database
 define('DATABASE', [
     'Port'   => '3306',
     'Host'   => 'localhost',
     'Driver' => 'PDO',
-    'Name'   => 'isvietnam',
+    'Name'   => 'web_database',
     'User'   => 'root',
     'Pass'   => '',
     'Prefix' => 'sm_'

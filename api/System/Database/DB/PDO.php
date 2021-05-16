@@ -58,7 +58,6 @@ final class PDO {
 
                 // create std class
                 $result = new \stdClass();
-                $result->row = (isset($data[0]) ? $data[0] : array());
                 $result->rows = $data;
                 $result->num_rows = $this->statement->rowCount();
             }
