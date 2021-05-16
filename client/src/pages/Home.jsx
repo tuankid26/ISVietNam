@@ -11,9 +11,9 @@ import Feature from '../Components/feature/feature.jsx'
 import Article from '../Components/article/article.jsx'
 
 const collection = [
-  { src: img1, caption: "Caption one" },
-  { src: img2, caption: "Caption two" },
-  { src: img3, caption: "Caption three" },
+  { src: img1, caption: "Hà Nội " },
+  { src: img2, caption: "Hồ Chí Minh" },
+  { src: img3, caption: "Đà Nẵng" },
 
 ];
 
@@ -78,7 +78,7 @@ componentWillMount() {
           input={collection}
           ratio={`3:2`}
           mode={`automatic`}
-          timeout={`3000`}
+          timeout={`4000`}
         />
         <Feature></Feature>
         <Article></Article>

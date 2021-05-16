@@ -1,29 +1,22 @@
-import React, { Component } from 'react';
-import { BrowserRouter as  Route, Router, Switch } from "react-router-dom";
-// import routes from './routers';
+
 import Home from './pages/Home'
 import Login from './Components/login/login'
 import Place from './pages/Place'
 import Hotel from './pages/Hotel'
 import Location from './pages/Location'
-class App extends Component {
-  
 
-  render () {
-    return (
-      // <Home/>
-      <Router>
-          
-            <Switch>
-              
-              <Route path='/home' exact Component= {Home}></Route>
-              <Route path='/' exact Component = {Login}></Route>
-            </Switch>
-         
-      </Router>
-    
-    )
-  }
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+
+export default function App() {
+  return (
+    <Router>
+      <Switch>
+        <Route path="/" exact component= {Home}></Route>
+        <Route path="/login" component= {Login}></Route>
+        <Route path="/place"  component= {Place}></Route>
+        <Route path="/hotel"  component= {Hotel}></Route>
+        <Route path="/location"  component= {Location}></Route>
+      </Switch>
+    </Router>
+  )
 }
-
-export default App;

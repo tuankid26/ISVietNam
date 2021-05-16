@@ -1,14 +1,68 @@
+/* .container {
+    margin: auto;
+    padding: 0 1.25rem;
+} */
 .container--md {
     max-width: calc(1520px + 5.6rem);
     margin: auto;
     padding: 0 1.25rem;
 }
-
-
-.mt--30 {
-    margin-top: 30px!important;
+.mb--30 {
+    margin-bottom: 30px!important;
 }
-.el-select>.el-input {
+.row {
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    display: flex;
+    margin-left: -.5rem;
+    margin-right: -.5rem;
+}
+@media (min-width: 769px)
+{
+    .title p {
+    margin: .5rem 0 0;
+}
+}
+
+@media (min-width: 481px)
+{
+.title p {
+    margin: .5rem 0 0;
+}
+}
+.text--justify {
+    text-align: justify;
+}
+.title p {
+    color: #555;
+    margin: 0;
+    flex: 0 0 auto;
+    font-size: 16px;
+}
+
+.m--0 {
+    margin: 0!important;
+}
+
+.d-flex {
+    display: flex!important;
+}
+
+/* Bộ lọc */
+.is-flex {
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+}
+.is-flex.jend {
+    justify-content: flex-end;
+}
+
+/* .col-xs-12 {
+    flex-basis: 100%;
+    max-width: 100%;
+} */
+/* .el-select>.el-input {
     display: block;
 }
 
@@ -126,5 +180,5 @@ input:not(.input--square), select:not(.input--square), textarea:not(.input--squa
     height: 100%;
     text-align: center;
     transition: all .3s;
-}
+} */
 

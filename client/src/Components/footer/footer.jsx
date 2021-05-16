@@ -1,7 +1,7 @@
 import React from "react";
 import { Component } from "react";
 import "./footer.scss"
-
+import logo from '../../images/logo.jpg'
 class Footer extends Component {
 
   render() {
@@ -10,7 +10,7 @@ class Footer extends Component {
         <div class="container">
     
             <a class="footer__logo" href='/'>
-               Logo
+               <img src= {logo} alt='ISVietNam'></img>
               </a>
           
               <div class="footer__social">

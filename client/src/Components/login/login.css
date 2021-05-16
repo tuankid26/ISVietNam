@@ -231,3 +231,8 @@ form {
 	height: 40px;
 	width: 40px;
 }
+
+.footer__logo img {
+	width: 180px;
+	height: 92px;
+  }

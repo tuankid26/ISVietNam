@@ -65,8 +65,8 @@ class Header extends Component {
                   <a href='/'>Home</a>
                   <a href='/'>News</a>
                   <a href='/'>Contact</a>
-                  <a href='/'>Sign in</a>
-                  <a href='/'>Sign up</a>
+                  <a href='/login'>Sign in</a>
+                  <a href='/login'>Sign up</a>
               </div>
               </nav>
              
