@@ -6,6 +6,7 @@ import Hotel from './pages/Hotel'
 import Location from './pages/Location'
 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import News from './pages/News'
 
 export default function App() {
   return (
@@ -13,6 +14,7 @@ export default function App() {
       <Switch>
         <Route path="/" exact component= {Home}></Route>
         <Route path="/login" component= {Login}></Route>
+        <Route path="/news" component= {News}></Route>
         <Route path="/place"  component= {Place}></Route>
         <Route path="/hotel"  component= {Hotel}></Route>
         <Route path="/location"  component= {Location}></Route>

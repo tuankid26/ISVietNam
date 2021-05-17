@@ -1,6 +1,5 @@
 import React from "react";
 import { Component } from "react";
-import axios from 'axios';
 import Slideshow from '../Components/slideshow/slideshow.jsx'
 import img1 from '../images/hanoi.jpg';
 import img2 from '../images/hochiminh.jpg';
@@ -26,15 +25,17 @@ class Home extends Component {
 }
 
 componentDidMount() {
-  axios.get(`http://localhost/ISVIETNAM/api/home`)
-    .then(res => {
-      const number_place = res.data.data.row.sum;
-      console.log({number_place})
-      
-      this.setState({ number_place });
-    
-    })
-    .catch(error => console.log(error));
+  //   fetch('', {
+  //   method: 'PUT',
+  //   body: formData
+  // })
+  // .then(response => response.json())
+  // .then(result => {
+  //   console.log('Success:', result);
+  // })
+  // .catch(error => {
+  //   console.error('Error:', error);
+  // });
 }
 
 handleInputChange = () => {

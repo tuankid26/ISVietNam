@@ -12,6 +12,53 @@ class Filter extends Component {
                 </h5>
                 <div role='filter' className='filters'>
                     <div className = 'form-row filter-group'>
+                    <div class="mt-3 mt-lg-0 col-lg-2 filter-parent">
+                        <div class="filter-title active">
+                            <span class="filter-notice">Chọn</span> Thành phố
+                        </div>
+                        <div class="filter-menu none" >
+                                        <div>
+                            <div class="form-check mb-2">
+                                <input type="checkbox" name="fl[]" value="Hà Nội"/>
+                                <span class="checkmark"></span>
+                                <span>Mầm non</span>
+                            </div>
+                            </div>
+                                        <div>
+                            <div class="form-check mb-2">
+                                <input type="checkbox" name="fl[]" value="Hồ Chí Minh"/>
+                                <span class="checkmark"></span>
+                                <span>Cấp 1</span>
+                            </div>
+                            </div>
+                                        <div>
+                            <div class="form-check mb-2">
+                                <input type="checkbox" name="fl[]" value="Đà Nẵng"/>
+                                <span class="checkmark"></span>
+                                <span>Cấp 2</span>
+                            </div>
+                            </div>
+                                        <div>
+                            <div class="form-check mb-2">
+                                <input type="checkbox" name="fl[]" value=""/>
+                                <span class="checkmark"></span>
+                                <span>Cấp 3</span>
+                            </div>
+                            </div>
+                                        <div>
+                            <div class="form-check mb-2">
+                                <input type="checkbox" name="fl[]" value="Người đi làm"/>
+                                <span class="checkmark"></span>
+                                <span>Người đi làm</span>
+                            </div>
+                            </div>
+                                        <hr class="mt-2 mb-1"/>
+                            <div class="filter-action">
+                                <span class="filter-clear">Clear</span>
+                                <span class="filter-shortened">Thu gọn <icon class="icon-angle-up ml-1"></icon></span>
+                            </div>
+                        </div>
+                    </div>
                         <div className="mt-3 mt-lg-0 col-lg-3 filter-parent">
                             <div className="filter-title">
                                 <span className="filter-notice">Chọn</span> khu vực
