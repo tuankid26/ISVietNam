@@ -29,7 +29,7 @@ class ModelsUser extends Model {
             $data['phone'] = '';
         }
         $stmt = $this->db->prepare('
-            insert into user (`username`, `password`, `firstname`, `lastname`, `phone`, `email`, `address`) values (?,?,?,?,?,?,?)
+            insert into user (`username`, `password`,`email`) values (?,?,?)
         ');
         $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
         return $stmt->execute(array_values($data));
