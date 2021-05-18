@@ -1,7 +1,8 @@
 <?php
 
 use MVC\Model;
-
+// use JWT\JWT;
+// define('SECRET_KEY', 'secret');
 class ModelsUser extends Model {
     public function find_username($username)
     {
@@ -14,24 +15,21 @@ class ModelsUser extends Model {
         return $stmt->fetchAll();
         
     }
-    public function get_all_users(){
+    public function getAllUsers(){
         return $this->db->query('SELECT * from user');
     }
     public function create_user($data)
     {
-        if (!isset($data['address'])){
-            $data['address'] = '';
+       
+        if (!isset($data['user_email'])){
+            $data['user_email'] = '';
         }
-        if (!isset($data['email'])){
-            $data['email'] = '';
-        }
-        if (!isset($data['phone'])){
-            $data['phone'] = '';
-        }
+        
         $stmt = $this->db->prepare('
-            insert into user (`username`, `password`,`email`) values (?,?,?)
+            insert into user (`username`, `password`,`user_email`) values (?,?,?)
         ');
-        $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
+        // $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
+        // print_r(array_values($data));
         return $stmt->execute(array_values($data));
     }
 }

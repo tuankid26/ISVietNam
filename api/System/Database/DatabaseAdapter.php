@@ -49,7 +49,13 @@ class DatabaseAdapter {
     public function query($sql) {
         return $this->dbConnection->query($sql);
     }
+    public function prepare($sql)
 
+    {   
+
+        return $this->dbConnection->prepare($sql);
+
+    }
     /**
      * @param $value
      * @return mixed

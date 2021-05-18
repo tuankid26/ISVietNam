@@ -11,7 +11,7 @@ class Login extends Component {
           loginFail : false,
           name : '',
           email: '',
-          passwordIn :'',
+          passwordUp :'',
           repeatPassword:'',
 			    success: false
         }
@@ -21,9 +21,9 @@ class Login extends Component {
       fetch('http://localhost/ISVietNam/api/user')
             .then(response => response.json())
             .then(json => {
-                const users = json.response.users.rows;
+                const users = json.response.user.rows;
                 this.setState({ users : users})
-                
+                console.log(users);
             })
     }
     
@@ -32,15 +32,16 @@ class Login extends Component {
       if (event.target.name === 'user') this.setState({username: event.target.value});
       if (event.target.name === 'password')  this.setState({password: event.target.value}); 
       if (event.target.name === 'name') this.setState({name : event.target.value});
-      if (event.target.name === 'email') this.setState({name : event.target.value});
-      if (event.target.name === 'passwordIn') this.setState({name : event.target.value});
-      if (event.target.name === 'repeatPassword') this.setState({name : event.target.value})
+      if (event.target.name === 'email') this.setState({email : event.target.value});
+      if (event.target.name === 'passwordUp') this.setState({passwordUp : event.target.value});
+      if (event.target.name === 'repeatPassword') this.setState({repeatPassword : event.target.value})
     }
 
-    onSignUp () {
+    onSignIn = (e) => {
+      e.preventDefault();
       var user = this.state.username;
 		  var password = this.state.password;
-		  const data = {user:user, password: password};
+		  const data = {username:user, password: password};
       if (data === this.state.users.filter(user => user === data) )
           {this.setState({success : true})}
           else{
@@ -50,12 +51,14 @@ class Login extends Component {
           }
     }
 
-    onSignIn () {
+    onSignUp = (e) => {
+      e.preventDefault()
       var name = this.state.name;
       var email = this.state.email;
-      var password = this.state.password;
-      var data = {name: name, email: email, password : password}
-      fetch('https://example.com/profile', {
+      var password = this.state.passwordUp;
+      var data = {username: name, password: password, user_email : email}
+      
+      fetch('http://localhost/ISVietNam/api/register', {
           method: 'POST', // or 'PUT'
           headers: {
             'Content-Type': 'application/json',
@@ -95,7 +98,7 @@ class Login extends Component {
                             <Redirect to='/home' />
                             </div> : ''
                           }
-                    <form action="/">
+                    <form onSubmit = {this.onSignUp}>
                       <h1>Create Account</h1>
                       <div className="social-container">
                         <a href="/" className="social"><i className="fab fa-facebook-f" /></a>
@@ -103,15 +106,15 @@ class Login extends Component {
                         <a href="/" className="social"><i className="fab fa-linkedin-in" /></a>
                       </div>
                       <span>or use your email for registration</span>
-                      <input className='input-login' type="name" placeholder="Name" onChange={this.handleChange}/>
-                      <input className='input-login' type="email" placeholder="Email" onChange={this.handleChange}/>
-                      <input className='input-login' type="passwordIn" placeholder="Password" onChange={this.handleChange} />
-                      <input className='input-login' type="repeatPassword" placeholder="RepeatPassword" onChange={this.handleChange} />
-                      <button className='button-form-login' onClick = {this.onSignUp} >Sign Up</button>
+                      <input className='input-login' name='name' type="text" placeholder="Name" onChange={this.handleChange}/>
+                      <input className='input-login' name='email'  type="email" placeholder="Email" onChange={this.handleChange}/>
+                      <input className='input-login' name='passwordUp'  type="text" placeholder="Password" onChange={this.handleChange} />
+                      <input className='input-login' name='repeatPassword' type="text" placeholder="RepeatPassword" onChange={this.handleChange} />
+                      <button className='button-form-login' >Sign Up</button>
                     </form>
                   </div>
                   <div className="form-container sign-in-container">
-                    <form action="/">
+                    <form onSubmit= {this.onSignIn}>
                       <h1>Sign in</h1>
                       <div className="social-container">
                         <a href="/" className="social"><i className="fab fa-facebook-f" /></a>
@@ -119,10 +122,10 @@ class Login extends Component {
                         <a href="/" className="social"><i className="fab fa-linkedin-in" /></a>
                       </div>
                       <span>or use your account</span>
-                      <input className='input-login' type="user" placeholder="Email" onChange={this.handleChange}/>
-                      <input className='input-login' type="password" placeholder="Password" onChange={this.handleChange}/>
+                      <input className='input-login' name='user' type="user" placeholder="Email" onChange={this.handleChange}/>
+                      <input className='input-login' name='password' type="password" placeholder="Password" onChange={this.handleChange}/>
                       <a href="/">Forgot your password?</a>
-                      <button className='button-form-login' onClick= {this.onSignIn} >Sign In</button>
+                      <button className='button-form-login'  >Sign In</button>
                     </form>
                   </div>
 

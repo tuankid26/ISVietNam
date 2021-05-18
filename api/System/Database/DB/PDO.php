@@ -44,6 +44,7 @@ final class PDO {
     /**
      * exec query statement
      */
+    
     public function prepare($sql){
         return $this->pdo->prepare($sql);
     }
