@@ -1,8 +1,76 @@
 import React, { Component } from 'react'
 import './login.css'
-
+import {BrowserRouter as Redirect} from 'react-router-dom';
 class Login extends Component {
+    constructor (props) {
+        super(props);
+        this.state = {
+          users : [],
+          username : '',
+          password : '',
+          loginFail : false,
+          name : '',
+          email: '',
+          passwordIn :'',
+          repeatPassword:'',
+			    success: false
+        }
+    }
+
+    componentDidMount () {
+      fetch('http://localhost/ISVietNam/api/user')
+            .then(response => response.json())
+            .then(json => {
+                const users = json.response.users.rows;
+                this.setState({ users : users})
+                
+            })
+    }
     
+    handleChange = (event) => {
+      console.log(event.target.value);
+      if (event.target.name === 'user') this.setState({username: event.target.value});
+      if (event.target.name === 'password')  this.setState({password: event.target.value}); 
+      if (event.target.name === 'name') this.setState({name : event.target.value});
+      if (event.target.name === 'email') this.setState({name : event.target.value});
+      if (event.target.name === 'passwordIn') this.setState({name : event.target.value});
+      if (event.target.name === 'repeatPassword') this.setState({name : event.target.value})
+    }
+
+    onSignUp () {
+      var user = this.state.username;
+		  var password = this.state.password;
+		  const data = {user:user, password: password};
+      if (data === this.state.users.filter(user => user === data) )
+          {this.setState({success : true})}
+          else{
+            this.setState({
+              loginFailed: true
+            });
+          }
+    }
+
+    onSignIn () {
+      var name = this.state.name;
+      var email = this.state.email;
+      var password = this.state.password;
+      var data = {name: name, email: email, password : password}
+      fetch('https://example.com/profile', {
+          method: 'POST', // or 'PUT'
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data),
+        })
+        .then(response => response.json())
+        .then(data => {
+          console.log('Success:', data);
+        })
+        .catch((error) => {
+          console.error('Error:', error);
+        });
+    }
+
     handleSignUp () {
         document.getElementById("container").classList.add("right-panel-active")
     }
@@ -17,6 +85,16 @@ class Login extends Component {
             <div className= 'page-sign' >
                <div className="container container-sign" id="container">
                   <div className="form-container sign-up-container">
+                        {this.state.loginFailed ? 
+                        <div className="alert alert-danger" role="alert">
+                            Tài khoản/Mật khẩu không hợp lệ!
+                        </div> : ''
+                        }
+                        {this.state.success ? 
+                          <div className="alert alert-success" role="alert">
+                            <Redirect to='/home' />
+                            </div> : ''
+                          }
                     <form action="/">
                       <h1>Create Account</h1>
                       <div className="social-container">
@@ -25,10 +103,11 @@ class Login extends Component {
                         <a href="/" className="social"><i className="fab fa-linkedin-in" /></a>
                       </div>
                       <span>or use your email for registration</span>
-                      <input className='input-login' type="text" placeholder="Name" />
-                      <input className='input-login' type="email" placeholder="Email" />
-                      <input className='input-login' type="password" placeholder="Password" />
-                      <button className='button-form-login' >Sign Up</button>
+                      <input className='input-login' type="name" placeholder="Name" onChange={this.handleChange}/>
+                      <input className='input-login' type="email" placeholder="Email" onChange={this.handleChange}/>
+                      <input className='input-login' type="passwordIn" placeholder="Password" onChange={this.handleChange} />
+                      <input className='input-login' type="repeatPassword" placeholder="RepeatPassword" onChange={this.handleChange} />
+                      <button className='button-form-login' onClick = {this.onSignUp} >Sign Up</button>
                     </form>
                   </div>
                   <div className="form-container sign-in-container">
@@ -40,10 +119,10 @@ class Login extends Component {
                         <a href="/" className="social"><i className="fab fa-linkedin-in" /></a>
                       </div>
                       <span>or use your account</span>
-                      <input className='input-login' type="email" placeholder="Email" />
-                      <input className='input-login' type="password" placeholder="Password" />
+                      <input className='input-login' type="user" placeholder="Email" onChange={this.handleChange}/>
+                      <input className='input-login' type="password" placeholder="Password" onChange={this.handleChange}/>
                       <a href="/">Forgot your password?</a>
-                      <button className='button-form-login'  >Sign In</button>
+                      <button className='button-form-login' onClick= {this.onSignIn} >Sign In</button>
                     </form>
                   </div>
 
