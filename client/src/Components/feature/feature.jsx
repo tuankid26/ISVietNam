@@ -20,7 +20,7 @@ class Feature extends Component{
         <div class="feature__grid">
           
           <div class="feature__item">
-            <div class="feature__icon"><img src=""  alt="Hà nội"/></div>
+            <div class="feature__icon"><img src="/client/src/images/Home/hanoi.jpg"  alt="Hà nội"/></div>
             <div class="feature__title">
               Hà Nội
             </div>
@@ -30,7 +30,7 @@ class Feature extends Component{
           </div>
     
           <div class="feature__item">
-            <div class="feature__icon"><img src="" alt="Hồ Chí Minh"/></div>
+            <div class="feature__icon"><img src="../../images/Home/TPHCM.jpg" alt="Hồ Chí Minh"/></div>
             <div class="feature__title">
               Hồ Chí Minh
             </div>
@@ -40,7 +40,7 @@ class Feature extends Component{
           </div>
     
           <div class="feature__item">
-            <div class="feature__icon"><img src="" alt= "Đà Nẵng" /></div>
+            <div class="feature__icon"><img src="../../images/Home/danang.jpg" alt= "Đà Nẵng" /></div>
             <div class="feature__title">
               Đà Nẵng
             </div>
@@ -50,7 +50,7 @@ class Feature extends Component{
           </div>
     
           <div class="feature__item">
-            <div class="feature__icon"><img src="" alt="Đà Lạt" /></div>
+            <div class="feature__icon"><img src="../../images/Home/dalat.jpg" alt="Đà Lạt" /></div>
             <div class="feature__title">
               Đà Lạt
             </div>
@@ -60,7 +60,7 @@ class Feature extends Component{
           </div>
         
           <div class="feature__item">
-            <div class="feature__icon"><img src="" alt="Ninh Bình" /></div>
+            <div class="feature__icon"><img src="../../images/Home/ninhbinh.jpg" alt="Ninh Bình" /></div>
             <div class="feature__title">
               Ninh Bình
             </div>
