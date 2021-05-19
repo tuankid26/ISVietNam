@@ -47,36 +47,30 @@ class ControllersUser extends Controller {
             $this->response->sendStatus(401);
             $this->response->setContent(['response' => $response]);
         }
-
     }
     public function validate()
     {
-        
         header('Content-type: application/json');
-        
         $data = json_decode(file_get_contents('php://input'), true);
-       
         $username = $data['username'];
         $password = $data['password'];
         $user = ($this->_model->find_username($username));
-        
+        // print_r($user);
         $response ='';
         if(sizeof($user) == 0)
         {
             $response = 'invalid_username';
             $this->response->sendStatus(401);
-
             $this->response->setContent(['response'=> $response]);
-
         }
         else{
             $user = $user[0];
-            
-       
-            if(password_verify($password, $user['password']))
+            // echo $password;
+            // echo $user['password'];
+            // if(password_verify($password, $user['password']))
+            if ($password == $user['password'])
             {
                 $token = JWT::encode($user, SECRET_KEY);
-                
                 $response = ['user'=>$user];
                 $this->response->sendStatus(200);
                 $this->response->setContent(['token' => $token, 'response'=> $response]);    
