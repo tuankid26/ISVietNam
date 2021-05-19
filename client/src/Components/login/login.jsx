@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import './login.css'
-import { BrowserRouter as Redirect } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 class Login extends Component {
   constructor(props) {
     super(props);
@@ -17,18 +17,8 @@ class Login extends Component {
     }
   }
 
-  // componentDidMount () {
-  //   fetch('http://localhost/ISVietNam/api/user')
-  //         .then(response => response.json())
-  //         .then(json => {
-  //             const users = json.response.user.rows;
-  //             this.setState({ users : users})
-  //             console.log(users);
-  //         })
-  // }
-
   handleChange = (event) => {
-    console.log(event.target.value);
+    // console.log(event.target.value);
     if (event.target.name === 'user') this.setState({ username: event.target.value });
     if (event.target.name === 'password') this.setState({ password: event.target.value });
     if (event.target.name === 'name') this.setState({ name: event.target.value });
@@ -48,14 +38,6 @@ class Login extends Component {
     var email = this.state.email;
     var data = { username: user, password: password, user_email: email }
     console.log(data);
-    // const data = {username:user, password: password};
-    // if (data === this.state.users.filter(user => user === data) )
-    //     {this.setState({success : true})}
-    //     else{
-    //       this.setState({
-    //         loginFailed: true
-    //       });
-    //     }
     fetch('http://localhost/ISVietNam/api/validate', {
       method: 'POST', // or 'PUT'
       headers: {
@@ -65,11 +47,16 @@ class Login extends Component {
     })
       .then(res => {
         if (!res.ok) {
-          this.setState({ success: false })
+          this.setState({ 
+            loginFail :true,
+            success: false })
+          
         }
+
         else {
           this.setState({ success: true })
         }
+        console.log(this.state.success);
       })     
       // .then(res => res.text())    // convert to plain text
       // .then(text => console.log(text))
@@ -90,12 +77,6 @@ class Login extends Component {
       .catch((error) => {
         console.error('Error:', error);
       });
-      // this.state.success ?
-      //   <div className="alert alert-success" role="alert">
-      //     <Redirect to='/home' />
-      //   </div> : <div className="alert alert-danger" role="alert">
-      //     Tài khoản/Mật khẩu không hợp lệ!
-      //             </div>
       // if (this.state.success){
       //   alert('Success')
       // }
@@ -135,16 +116,18 @@ class Login extends Component {
   }
 
   render() {
-
+    if (this.state.success) return  <Redirect to='/' /> 
+					
     return (
       <div className='page-sign' >
+        {this.state.loginFail ? 
+                <div className="alert " role="alert">
+                    Tài khoản/Mật khẩu không hợp lệ!
+                </div> : ''
+                        }
+       
         <div className="container container-sign" id="container">
           <div className="form-container sign-up-container">
-            {/* {this.state.success ? 
-                        <div className="alert alert-danger" role="alert">
-                            Tài khoản/Mật khẩu không hợp lệ!
-                        </div> : ''
-                        } */}
             <form onSubmit={this.onSignUp}>
               <h1>Create Account</h1>
               <div className="social-container">
