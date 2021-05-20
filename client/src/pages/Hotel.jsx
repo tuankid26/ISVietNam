@@ -12,6 +12,7 @@ class Hotel extends Component {
                 <div className ='i_hotel'>
                     <Gallery></Gallery>
                     <Detail></Detail>
+                    
                 </div>
                 <Footer></Footer>
             </div>

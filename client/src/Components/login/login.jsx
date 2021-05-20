@@ -2,121 +2,91 @@ import React, { Component } from 'react'
 import './login.css'
 import { Redirect } from 'react-router-dom';
 class Login extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      users: [],
-      username: '',
-      password: '',
-      loginFail: false,
-      name: '',
-      email: '',
-      passwordUp: '',
-      repeatPassword: '',
-      success: false
-    }
-  }
+	constructor(props) {
+		super(props);
+		this.state = {
+			users: [],
+			username: '',
+			password: '',
+			loginFail: false,
+			name: '',
+			email: '',
+			passwordUp: '',
+			repeatPassword: '',
+			success: false
+		}
+	}
 
-  handleChange = (event) => {
-    // console.log(event.target.value);
-    if (event.target.name === 'user') this.setState({ username: event.target.value });
-    if (event.target.name === 'password') this.setState({ password: event.target.value });
-    if (event.target.name === 'name') this.setState({ name: event.target.value });
-    if (event.target.name === 'email') this.setState({ email: event.target.value });
-    if (event.target.name === 'passwordUp') this.setState({ passwordUp: event.target.value });
-    if (event.target.name === 'repeatPassword') this.setState({ repeatPassword: event.target.value })
-  }
-  alertFunction = () =>{
-    return this.state.success ? <div className="alert alert-success" role="alert"><Redirect to='/home' /></div> : 
-    <div className="alert alert-danger" role="alert">Tài khoản/Mật khẩu không hợp lệ! </div>
+	handleChange = (event) => {
+		
+		if (event.target.name === 'user') this.setState({ username: event.target.value });
+		if (event.target.name === 'password') this.setState({ password: event.target.value });
+		if (event.target.name === 'name') this.setState({ name: event.target.value });
+		if (event.target.name === 'email') this.setState({ email: event.target.value });
+		if (event.target.name === 'passwordUp') this.setState({ passwordUp: event.target.value });
+		if (event.target.name === 'repeatPassword') this.setState({ repeatPassword: event.target.value })
+	}
+	onSignIn = (e) => {
+		e.preventDefault();
+		var user = this.state.username;
+		var password = this.state.password;
+		var email = this.state.email;
+		const data = { username: user, password: password, user_email: email }
+		fetch('http://localhost/ISVietNam/api/validate', {
+			method: 'POST', // or 'PUT'
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify(data),
+			})
+			// .then(response => response.json())
+			.then(res => {
+				console.log(res)
+				if (!res.ok) { 
+					this.setState({ loginFail : true })	
+				} else {
+					this.setState({success : true})
+				}
+			})
+			.catch((error) => {
+				console.error('Error:', error);
+			});
+	}
 
-  }
-  onSignIn = (e) => {
-    e.preventDefault();
-    var user = this.state.username;
-    var password = this.state.password;
-    var email = this.state.email;
-    var data = { username: user, password: password, user_email: email }
-    console.log(data);
-    fetch('http://localhost/ISVietNam/api/validate', {
-      method: 'POST', // or 'PUT'
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data),
-    })
-      .then(res => {
-        if (!res.ok) {
-          this.setState({ 
-            loginFail :true,
-            success: false })
-          
-        }
+	onSignUp = (e) => {
+		e.preventDefault()
+		var name = this.state.name;
+		var email = this.state.email;
+		var password = this.state.passwordUp;
+		var data = { username: name, password: password, user_email: email }
 
-        else {
-          this.setState({ success: true })
-        }
-        console.log(this.state.success);
-      })     
-      // .then(res => res.text())    // convert to plain text
-      // .then(text => console.log(text))
-      // .then(text => {
-      //   if (text['response'] === 'invalid_username'){
-      //     alert('Invalid username');
-      //   }
-      //   else {
-      //     if (text['response'] === 'invalid_password'){
-      //       alert('Invalid password');
-      //     }
-      //   }
-      //   this.setState({success : true});
-      // })
-      // .then(data => {
-      //   console.log('Success:', data);
-      // })
-      .catch((error) => {
-        console.error('Error:', error);
-      });
-      // if (this.state.success){
-      //   alert('Success')
-      // }
-      // else
-      // alert('Failed')
-  }
+		fetch('http://localhost/ISVietNam/api/register', {
+			method: 'POST', // or 'PUT'
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify(data),
+		})
+			.then(response => response.json())
+			.then(data => {
+				console.log('Success:', data);
+			})
+			.catch((error) => {
+				console.error('Error:', error);
+			});
+	}
 
-  onSignUp = (e) => {
-    e.preventDefault()
-    var name = this.state.name;
-    var email = this.state.email;
-    var password = this.state.passwordUp;
-    var data = { username: name, password: password, user_email: email }
+	handleSignUp() {
+		document.getElementById("container").classList.add("right-panel-active")
+	}
 
-    fetch('http://localhost/ISVietNam/api/register', {
-      method: 'POST', // or 'PUT'
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data),
-    })
-      .then(response => response.json())
-      .then(data => {
-        console.log('Success:', data);
-      })
-      .catch((error) => {
-        console.error('Error:', error);
-      });
-  }
+	handleSignIn() {
+		document.getElementById("container").classList.remove("right-panel-active")
+	}
 
-  handleSignUp() {
-    document.getElementById("container").classList.add("right-panel-active")
-  }
+	render() {
 
-  handleSignIn() {
-    document.getElementById("container").classList.remove("right-panel-active")
-  }
-
-  render() {
-    if (this.state.success) return  <Redirect to='/' /> 
+    if (this.state.success) return <Redirect to='/' /> 
 					
     return (
       <div className='page-sign' >

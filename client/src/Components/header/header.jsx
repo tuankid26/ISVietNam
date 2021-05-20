@@ -63,7 +63,7 @@ class Header extends Component {
                 </div>
                  <div class="header__links hide-for-mobile">
                   <a href='/'>Home</a>
-                  <a href='/'>News</a>
+                  <a href='/news'>News</a>
                   <a href='/'>Contact</a>
                   <a href='/login'>Sign in</a>
                   <a href='/login'>Sign up</a>
@@ -72,10 +72,10 @@ class Header extends Component {
              
               <div class="header__menu has-fade">
                   <a href="/">Home</a>
-                  <a href="/">About</a>
+                  <a href="/">News</a>
                   <a href="/">Contact</a>
-                  <a href="/">Blog</a>
-                  <a href="/">Careers</a>
+                  <a href="/">Sign In</a>
+                  <a href="/">Sign Up</a>
               </div>
             </div>
 
