@@ -16,7 +16,7 @@ export default function App() {
         <Route path="/login" component= {Login}></Route>
         <Route path="/news" component= {News}></Route>
         <Route path="/place"  component= {Place}></Route>
-        <Route path="/hotel"  component= {Hotel}></Route>
+        <Route path="/hotel/:id"  component= {Hotel}></Route>
         <Route path="/location"  component= {Location}></Route>
       </Switch>
     </Router>

@@ -90,21 +90,16 @@ class Login extends Component {
 					
     return (
       <div className='page-sign' >
-        {this.state.loginFail ? 
-                <div className="alert " role="alert">
-                    Tài khoản/Mật khẩu không hợp lệ!
-                </div> : ''
-                        }
-       
+        
         <div className="container container-sign" id="container">
           <div className="form-container sign-up-container">
             <form onSubmit={this.onSignUp}>
               <h1>Create Account</h1>
-              <div className="social-container">
+              {/* <div className="social-container">
                 <a href="/" className="social"><i className="fab fa-facebook-f" /></a>
                 <a href="/" className="social"><i className="fab fa-google-plus-g" /></a>
                 <a href="/" className="social"><i className="fab fa-linkedin-in" /></a>
-              </div>
+              </div> */}
               <span>or use your email for registration</span>
               <input className='input-login' name='name' type="text" placeholder="Name" onChange={this.handleChange} />
               <input className='input-login' name='email' type="email" placeholder="Email" onChange={this.handleChange} />
@@ -116,15 +111,19 @@ class Login extends Component {
           <div className="form-container sign-in-container">
             <form onSubmit={this.onSignIn}>
               <h1>Sign in</h1>
-              <div className="social-container">
+              {/* <div className="social-container">
                 <a href="/" className="social"><i className="fab fa-facebook-f" /></a>
                 <a href="/" className="social"><i className="fab fa-google-plus-g" /></a>
                 <a href="/" className="social"><i className="fab fa-linkedin-in" /></a>
-              </div>
-              <span>or use your account</span>
+              </div> */}
+              {/* <span>or use your account</span> */}
               <input className='input-login' required name='user' type="user" placeholder="User" onChange={this.handleChange} />
               <input className='input-login' required name='password' type="password" placeholder="Password" onChange={this.handleChange} />
-              <a href="/">Forgot your password?</a>
+              <a href="/" className ="alert-login">{this.state.loginFail ? 
+                <div className="alert " role="alert">
+                    Tài khoản/Mật khẩu không hợp lệ!
+                </div> : ''
+                        }</a>
               <button className='button-form-login' onClick={this.alertFunction}>Sign In</button>
             </form>
           </div>
