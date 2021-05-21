@@ -28,7 +28,7 @@ class ModelsUser extends Model {
         $stmt = $this->db->prepare('
             insert into user (`username`, `password`,`user_email`) values (?,?,?)
         ');
-        $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
+        // $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
         // print_r(array_values($data));
         return $stmt->execute(array_values($data));
     }

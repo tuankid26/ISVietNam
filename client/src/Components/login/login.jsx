@@ -32,7 +32,7 @@ class Login extends Component {
 		var password = this.state.password;
 		var email = this.state.email;
 		const data = { username: user, password: password, user_email: email }
-		console.log(data);
+		// console.log(data);
 		fetch('http://localhost/ISVietNam/api/validate', {
 			method: 'POST', // or 'PUT'
 			headers: {
@@ -47,6 +47,8 @@ class Login extends Component {
 					alert('Failed')
 				}
 				else {
+					// localStorage.setItem("id", res.data.response.user.username);
+					localStorage.setItem("token", res.token);
 					history.push('/')
 				}
 			})
