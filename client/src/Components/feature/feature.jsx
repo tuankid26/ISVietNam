@@ -19,7 +19,7 @@ class Feature extends Component{
     
         <div class="feature__grid">
           <div class="feature__item">
-            <div class="feature__icon"><img src="../../images/danang.jpg"  alt="Hà nội"/></div>
+            <div class="feature__icon"><img src="../../images/Home/hanoi.jpg"  alt="Hà nội"/></div>
             <div class="feature__title">
               Hà Nội
             </div>

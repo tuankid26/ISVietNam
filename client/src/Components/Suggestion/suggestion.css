@@ -1,0 +1,6 @@
+ul :hover{
+    background-color: aquamarine;
+}
+ul{
+    cursor: pointer;
+}

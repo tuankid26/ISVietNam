@@ -1,57 +1,51 @@
-.search-box {
-    box-shadow: 1px 1px 4px rgb(0 0 0 / 20%);
-    transition: transform .4s;
-    border-radius: 5px;
-    display: flex;
-}
-.search-location {
-    width: 300px;
-    height: auto;
-    flex: 1 1 auto;
-    display: flex;
-    flex-direction: column;
-}
-.searching__input-text {
-    -webkit-writing-mode: horizontal-tb !important;
-    text-rendering: auto;
-    color: -internal-light-dark(black, white);
-    letter-spacing: normal;
-    word-spacing: normal;
-    text-transform: none;
-    text-indent: 0px;
-    text-shadow: none;
-    display: inline-block;
-    text-align: start;
-    appearance: textfield;
-    background-color: -internal-light-dark(rgb(255, 255, 255), rgb(59, 59, 59));
-    -webkit-rtl-ordering: logical;
-    cursor: text;
-    margin: 0em;
-    font: 400 13.3333px Arial;
-    padding: 1px 2px;
-    border-width: 2px;
-    border-style: inset;
-    border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
-    border-image: initial;
-    position: absolute;
+.search {
+  box-shadow: 1px 1px 4px rgb(0 0 0 / 20%);
+  transition: transform 0.4s;
+  border-radius: 5px;
+  display: flex;
+  width: 100%;
+  position: relative;
+  display: flex;
 }
 
-.bold, .coupon__action, .coupon__code {
-    font-weight: 700;
-}
-.searching__input-text {
-    border: 0;
-    box-shadow: none;
-    padding: 0;
-    font-size: 1rem;
-    height: auto;
-    line-height: 1.5;
-    border-radius: 0!important;
-}
-.search-field__wrap .booking__input-text {
-    font-size: 14px;
+.searchTerm {
+  width: 80%;
+  border: 3px solid #00b4cc;
+  border-right: none;
+  padding: 5px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: #9dbfaf;
 }
 
-.btn-info {
-    left: 200px;
+.searchTerm:focus {
+  color: #00b4cc;
+}
+
+.searchButton {
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(#31d35c),
+    to(#2bb7da)
+  );
+  background-image: linear-gradient(to right, #31d35c, #2bb7da);
+  position: relative;
+  display: inline-block;
+  padding: 0.875rem 2.1875rem;
+  border: 1px solid #00b4cc;
+  /* background: #00B4CC; */
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size:inherit;
+}
+.wrap {
+  width: 30%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }

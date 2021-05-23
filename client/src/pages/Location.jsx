@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Header from '../Components/header/header';
 import Footer from '../Components/footer/footer';
 import './css/location.css'
+import Filter from '../Components/Filter/filter';
 class Location extends Component {
 
     render() {
@@ -10,17 +11,8 @@ class Location extends Component {
                 <Header></Header>
                 <div className = 'location'>
                       <div id='mapWrap' className='wapper'>
-                            {/* <div className='shadow-2'>
-                              //Bộ lọc<p>Bộ lọc</p>
-                             </div> */}
-                            <div className="container container--md mt--30">
-                                <div class="row mt--30">
-                                    <div class="col-lg-12">
-                                        
-                                    </div>
-                                </div>
-                            </div>
                             <div className= 'container container--md'>
+                                <Filter></Filter>
                                 <div className='el-row' >
                                     <div className='section mt--30'>
                                         <div className='row'>

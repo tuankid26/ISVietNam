@@ -236,3 +236,7 @@ form {
 	width: 180px;
 	height: 92px;
   }
+
+.alert{
+	color: #e80303;
+}

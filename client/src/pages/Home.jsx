@@ -1,18 +1,15 @@
 import React from "react";
 import { Component } from "react";
 import Slideshow from '../Components/slideshow/slideshow.jsx'
-import img1 from '../images/hanoi.jpg';
-import img2 from '../images/hochiminh.jpg';
-import img3 from '../images/danang.jpg';
 import Header from '../Components/header/header'
 import Footer from '../Components/footer/footer.jsx';
 import Feature from '../Components/feature/feature.jsx'
 import Article from '../Components/article/article.jsx'
 
 const collection = [
-  { src: img1, caption: "Hà Nội " },
-  { src: img2, caption: "Hồ Chí Minh" },
-  { src: img3, caption: "Đà Nẵng" },
+  { src: '../../images/Banner/hanoi.jpg', caption: "Hà Nội " },
+  { src: '../../images/Banner/hochiminh.jpg', caption: "Hồ Chí Minh" },
+  { src: '../../images/Banner/danang.jpg', caption: "Đà Nẵng" },
 
 ];
 
@@ -24,19 +21,6 @@ class Home extends Component {
 
 }
 
-componentDidMount() {
-  //   fetch('', {
-  //   method: 'PUT',
-  //   body: formData
-  // })
-  // .then(response => response.json())
-  // .then(result => {
-  //   console.log('Success:', result);
-  // })
-  // .catch(error => {
-  //   console.error('Error:', error);
-  // });
-}
 
 handleInputChange = () => {
     this.setState({
@@ -56,16 +40,6 @@ getData = () => {
     })
 }
 
-// filterArray = () => {
-//     var searchString = this.state.query;
-//     var responseData = this.state.data
-//     if(searchString.length > 0){
-//         // console.log(responseData[i].name);
-//         responseData = responseData.filter(l => {
-//             console.log( l.name.toLowerCase().match(searchString));
-//         })
-//     }
-// }
 
 componentWillMount() {
     this.getData();
