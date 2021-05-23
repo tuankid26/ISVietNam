@@ -74,7 +74,11 @@
           align-items: center;
 }
 
+<<<<<<< HEAD
 /* button, .button {
+=======
+ .btn-info {
+>>>>>>> ecd02ef118cd63de70f77638d207622c49ee5d12
   position: relative;
   display: inline-block;
   padding: 0.875rem 2.1875rem;
@@ -91,6 +95,7 @@
   overflow: hidden;
 } */
 
+<<<<<<< HEAD
 /* button::before, .button::before {
   content: "";
   position: absolute;
@@ -103,6 +108,9 @@
   -webkit-transition: opacity 150ms ease-in-out;
   transition: opacity 150ms ease-in-out;
 } */
+=======
+
+>>>>>>> ecd02ef118cd63de70f77638d207622c49ee5d12
 
 /* button:hover::before, .button:hover::before {
   opacity: 1;
