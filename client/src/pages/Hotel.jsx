@@ -3,6 +3,7 @@ import Header from '../Components/header/header'
 import Gallery from '../Components/Gallery/Gallery'
 import Detail from '../Components/Detail/Detail'
 import Footer from '../Components/footer/footer'
+// import Booking from '../Components/booking/Booking'
 class Hotel extends Component {
     
     render () {
@@ -11,7 +12,7 @@ class Hotel extends Component {
                 <Header></Header>
                 <div className ='i_hotel'>
                     <Gallery></Gallery>
-                    <Detail></Detail>  
+                    <Detail></Detail> 
                 </div>
                 <Footer></Footer>
             </div>
