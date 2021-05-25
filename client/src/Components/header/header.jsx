@@ -13,7 +13,7 @@ class Header extends Component {
   }
   checkLogin = () => {
     const token = localStorage.getItem('token');
-    console.log(token);
+    // console.log(token);
     if (token == null) {
       return (
         <div class="header__links hide-for-mobile">

@@ -3,6 +3,22 @@ import "./article.scss";
 // import img from './hanoi1.png'
 
 class Article extends Component {
+  state = {
+    news : [],
+    title : []
+  }
+
+  componentDidMount(){
+    fetch('http://localhost/ISVietNam/api/news')
+        .then(response => response.json())
+        .then(result => {
+            const rs = result.response.news.rows
+            this.setState({news : rs})
+            // this.setState({ news: [...this.state., 'new value'] })
+            console.log(this.state.news);
+        })
+        .catch((error) => console.log("error", error)); 
+    }
   render() {
     return (
       <section class="articles">
@@ -13,9 +29,9 @@ class Article extends Component {
             <a href="/" class="article__item">
               <div class="article__image"></div>
               <div class="article__text">
-                <div class="article__author">By Tuấn Nguyễn</div>
+                <div class="article__author">By </div>
                 <div class="article__title">
-                  Receive money in any currency with no fees
+                  {/* {this.state.news[0].title} */}
                 </div>
                 <div class="article__description">
                   The world is getting smaller and we’re becoming more mobile.

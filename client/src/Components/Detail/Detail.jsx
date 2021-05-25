@@ -5,6 +5,41 @@ import Booking from "../booking/Booking";
 import "./Detail.css";
 // import arrow from './icon-arrow.png'
 class Detail extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      name_hotel: "",
+      note: "",
+      price: "",
+      wifi: "",
+      washing: "",
+      TV: "",
+      refesher: "",
+      Fridge: "",
+      id: this.props.id,
+    };
+  }
+
+  componentDidMount() {
+    fetch("http://localhost/ISVietNam/api/hotel")
+      .then((response) => response.json())
+      .then((result) => {
+        const rs = result.response.hotel.rows;
+        const id = this.state.id;
+        this.setState({
+          name_hotel: rs[id].name_hotel,
+          note: rs[id].Note,
+          wifi: rs[id].Wifi,
+          TV: rs[id].TV,
+          washing: rs[id].Washing,
+          refesher: rs[id].refesher,
+          Fridge: rs[id].Fridge,
+          price: rs[id].price,
+        });
+      })
+      .catch((error) => console.log("error", error));
+  }
+
   render() {
     return (
       <div className="detail">
@@ -38,15 +73,13 @@ class Detail extends Component {
                             <div className="title">
                               <div className="row">
                                 <h1 className="mb-12 break-word">
-                                  The Pankiz Home
+                                  {this.state.name_hotel}
                                 </h1>
                               </div>
                             </div>
                             <div className="detail-location is-flex middle-xs start-md mt--18">
                               <div>
                                 <svg
-                                  version="1.1"
-                                  viewBox="0 0 24"
                                   className="svg-icon svg-fill"
                                   width="24px"
                                   height="24px"
@@ -76,55 +109,10 @@ class Detail extends Component {
                                   >
                                     <p>
                                       <strong>
-                                        Tóm tắt về The Pankiz House
+                                        Tóm tắt về {this.state.name_hotel}
                                       </strong>
                                     </p>
-                                    <p>
-                                      + Căn hộ nằm trên tầng 2 của toà nhà , với
-                                      ban công nhìn xuống phố cổ
-                                    </p>
-                                    <p>
-                                      + Vị trí không thể tốt hơn ! Cách chợ đêm
-                                      cuối tuần 2 phút đi bộ , Chợ Đồng Xuân chỉ
-                                      5 phút , hồ Hoàn Kiếm 10 phút đi bộ
-                                    </p>
-                                    <p>
-                                      + Ngoài ra có rất nhiều hàng quán xung
-                                      quanh. Nổi tiếng bạn có thể tìm thấy cafe
-                                      trứng, cafe cốt dừa , các loại nước ép
-                                      ngay trước cửa nhà. Cửa hàng tiện lợi chỉ
-                                      cách 100m mở 24h . Các món ngon của Hà Nội
-                                      cũng tập trung nhiều xung quanh khu vực
-                                      này với vài bước chân thôi ( Bánh Cuốn,
-                                      Phở, Bún Thang, Bún riêu , Bún chả ect
-                                      ...)
-                                    </p>
-                                    <p>
-                                      + Phòng tắm rộng nằm ngay trong phòng với
-                                      vách tắm ngăn .
-                                    </p>
-                                    <p>
-                                      + Smart TIvi , có netflix ( bạn phải có
-                                      account riêng của mình nhé :) )
-                                    </p>
-                                    <p>
-                                      + Một cái bếp nhỏ trong phòng để bạn có
-                                      thể nấu những món đơn giản
-                                    </p>
-                                    <p>
-                                      + Căn hộ nằm trên tầng 3 của toà nhà và
-                                      không có thang máy{" "}
-                                    </p>
-                                    <p>
-                                      + Nếu bạn đi xe máy , có chỗ để xe ban
-                                      ngày , ngay trước cửa chỗ nghỉ. Ban đêm sẽ
-                                      có bãi đỗ xe cách 100m ( mất phí)
-                                    </p>
-                                    <p>
-                                      Nếu phòng này không không trống ngày bạn
-                                      muốn đặt, hãy nhắn tin hỏi bọn mình để có
-                                      các loại phòng khác nhé
-                                    </p>
+                                    <p>{this.state.note}</p>
                                   </div>
                                   {/* <a className = 'btn color-i pointer mt--6'>Đọc Thêm </a> */}
                                 </div>
@@ -147,19 +135,31 @@ class Detail extends Component {
                         <h4 className="mt--24 mb--0">Tiện ích</h4>
                         <ul className="list list--3 is-flex">
                           <li className="mt--12">
-                            <span>Wifi</span>
+                            {this.state.wifi === "1" ? <span>Wifi</span> : ""}
                           </li>
                           <li className="mt--12">
-                            <span>TV</span>
+                            {this.state.TV === "1" ? <span>Ti Vi</span> : ""}
                           </li>
                           <li className="mt--12">
-                            <span>Điều hòa</span>
+                            {this.state.Fridge === "1" ? (
+                              <span>Tủ Lạnh</span>
+                            ) : (
+                              ""
+                            )}
                           </li>
                           <li className="mt--12">
-                            <span>Máy giặt</span>
+                            {this.state.refesher === "1" ? (
+                              <span>Điều hòa</span>
+                            ) : (
+                              ""
+                            )}
                           </li>
                           <li className="mt--12">
-                            <span>Ti vi</span>
+                            {this.state.washing === "1" ? (
+                              <span>Máy Giặt</span>
+                            ) : (
+                              ""
+                            )}
                           </li>
                           <li className="mt--12">
                             <span>Tủ Lạnh</span>
@@ -180,7 +180,7 @@ class Detail extends Component {
                           Thứ hai - Thứ năm
                         </span>
                         <span class="c-gray-3 fl-item-50 pl--12 bold text-right">
-                          790,000₫
+                          {this.state.price}
                         </span>
                       </div>
                       <div class="is-flex jbetween align-center py--12 px--18">
@@ -188,15 +188,7 @@ class Detail extends Component {
                           Thứ sáu - Chủ nhật
                         </span>
                         <span class="c-gray-3 fl-item-50 pl--12 bold text-right">
-                          790,000₫
-                        </span>
-                      </div>
-                      <div class="is-flex jbetween align-center py--12 px--18">
-                        <span class="c-gray-3 fl-item-50">
-                          Phí trẻ em tăng thêm
-                        </span>
-                        <span class="c-gray-3 fl-item-50 pl--12 bold text-right">
-                          125,000₫ (sau 2 khách)
+                          {this.state.price}
                         </span>
                       </div>
                       <div class="is-flex jbetween align-center py--12 px--18">
@@ -242,7 +234,7 @@ class Detail extends Component {
                   </div>
                 </div>
               </div>
-              <Booking></Booking>
+              <Booking price={this.state.price}></Booking>
             </div>
           </div>
         </div>
