@@ -9,17 +9,18 @@
 }
 
 .searchTerm {
+  font-size: larger;
   width: 80%;
   border: 3px solid #00b4cc;
   border-right: none;
   padding: 5px;
   border-radius: 5px 0 0 5px;
   outline: none;
-  color: #9dbfaf;
+  color: #6b6b6b;
 }
 
 .searchTerm:focus {
-  color: #00b4cc;
+  color: #000000;
 }
 
 .searchButton {
@@ -48,4 +49,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+.col-xs-4.col-sm-4.col-md-4.col-lg-4 {
+  z-index: 9;
 }

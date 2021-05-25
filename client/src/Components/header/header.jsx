@@ -61,13 +61,13 @@ class Header extends Component {
               }
             </nav>
 
-            <div class="header__menu has-fade">
+            {/* <div class="header__menu has-fade">
               <a href="/">Home</a>
               <a href="/">About</a>
               <a href="/">Contact</a>
               <a href="/">Blog</a>
               <a href="/">Careers</a>
-            </div>
+            </div> */}
 
         </div>
       </header>

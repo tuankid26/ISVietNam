@@ -74,11 +74,7 @@
           align-items: center;
 }
 
-<<<<<<< HEAD
 /* button, .button {
-=======
- .btn-info {
->>>>>>> ecd02ef118cd63de70f77638d207622c49ee5d12
   position: relative;
   display: inline-block;
   padding: 0.875rem 2.1875rem;
@@ -95,7 +91,6 @@
   overflow: hidden;
 } */
 
-<<<<<<< HEAD
 /* button::before, .button::before {
   content: "";
   position: absolute;
@@ -108,9 +103,6 @@
   -webkit-transition: opacity 150ms ease-in-out;
   transition: opacity 150ms ease-in-out;
 } */
-=======
-
->>>>>>> ecd02ef118cd63de70f77638d207622c49ee5d12
 
 /* button:hover::before, .button:hover::before {
   opacity: 1;
@@ -150,16 +142,16 @@
           transform: rotate(-45deg);
 }
 
-/* .header .overlay {
-  opacity: 0;
-  position: fixed;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#2d314d), to(transparent));
-  background-image: linear-gradient(#2d314d, transparent);
-} */
+  /* .header .overlay {
+    opacity: 0;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#2d314d), to(transparent));
+    background-image: linear-gradient(#2d314d, transparent);
+  } */
 
 .header nav {
   position: relative;
