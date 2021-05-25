@@ -1,9 +1,8 @@
 import { Component } from "react";
 import "./Booking.css";
 class Booking extends Component {
-  state = {
-    name_hotel: "",
-  };
+  
+
   render() {
     return (
       <div className="col-xs-4 col-sm-2 col-md-3">
@@ -12,7 +11,7 @@ class Booking extends Component {
             <div className="booking__wrap pt--24 px--12 px--lg--24">
               <div className="booking__pricing">
                 <p className="fadeIn">
-                  <span className="extra-bold"> 800,000 đ</span>
+                  <span className="extra-bold"> {this.props.price}</span>
                   <span className="p--small">/1 đêm</span>
                 </p>
               </div>
@@ -86,7 +85,7 @@ class Booking extends Component {
                 </div>
               </div>
 
-              <button className="btn btn-grad--primary px--6 mb--12 btn--sm btn--full bold rounded btn--shadow-primary">
+              <button onClick={this.handleSubmit} className="btn btn-grad--primary px--6 mb--12 btn--sm btn--full bold rounded btn--shadow-primary">
                 <span>Đặt ngay</span>
               </button>
             </div>

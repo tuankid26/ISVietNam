@@ -13,7 +13,7 @@ class Header extends Component {
   }
   checkLogin = () => {
     const token = localStorage.getItem('token');
-    console.log(token);
+    // console.log(token);
     if (token == null) {
       return (
         <div class="header__links hide-for-mobile">
@@ -61,13 +61,13 @@ class Header extends Component {
               }
             </nav>
 
-            <div class="header__menu has-fade">
+            {/* <div class="header__menu has-fade">
               <a href="/">Home</a>
               <a href="/">About</a>
               <a href="/">Contact</a>
               <a href="/">Blog</a>
               <a href="/">Careers</a>
-            </div>
+            </div> */}
 
         </div>
       </header>

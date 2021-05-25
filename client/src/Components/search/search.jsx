@@ -13,7 +13,7 @@ class Search extends Component {
 				this.setState({
 					results: data.response.place.rows
 				})
-				console.log(data.response.place.rows)
+				// console.log(data.response.place.rows)
 			})
 	}
 	handleOnClick = (e) => {
