@@ -34,7 +34,7 @@ class Place extends Component {
                     Paragraph_3 : place[id].Paragraph_3,
                 })
                 
-                // console.log(place[id]);
+                console.log(place[id]);
             })
     }
     render() {
@@ -50,18 +50,18 @@ class Place extends Component {
                         <div className="container container-md">
                             <h3>Sơ lược</h3>
                             <p>{this.state.Paragraph_1}</p>
-                            <img alt="img1" src={` ../../images/Image/City/${this.state.ID_place}_${this.state.ID_province}.jpg`} style = {{width : "1024px"}}></img>
+                            <img alt="img1" src={` ../../images/Image/City/${this.state.ID_place}_1.jpg`} style = {{width : "1024px"}}></img>
                         </div>
                         <div className="container container-md ">
                             <h3>Giới thiệu về địa điểm</h3>
                             <p>{this.state.Paragraph_2}</p>
-                            <img alt="img2" src={` ../../images/Image/City/${this.state.ID_place}_${this.state.ID_province}.jpg`} style = {{width : "1024px"}}></img>
+                            <img alt="img2" src={` ../../images/Image/City/${this.state.ID_place}_2.jpg`} style = {{width : "1024px"}}></img>
                         </div>
-                        <div className="container container-md">
-                            {/* <h3>Tên đoạn 3</h3> */}
+                        {/* <div className="container container-md">
+                        
                             <p>{this.state.Paragraph_3}</p>
-                            <img alt="img3" src={` ../../images/Image/City/${this.state.ID_place}_${this.state.ID_province}.jpg`} style = {{width : "1024px"}}></img>
-                        </div>
+                            <img alt="img3" src={` ../../images/Image/City/${this.state.ID_place}_3.jpg`} style = {{width : "1024px"}}></img>
+                        </div> */}
                     </div>
                     <Promo id={this.state.ID_place}></Promo>
                 </div>
