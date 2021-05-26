@@ -14,7 +14,7 @@ class Promo extends Component {
     fetch("http://localhost/ISVietNam/api/hotel")
       .then((response) => response.json())
       .then((result) => {
-        const rs = result.response.hotel.rows;
+        // const rs = result.response.hotel.rows;
         this.setState({ data: result.response.hotel.rows });
         // console.log(this.props.id);
         // console.log(this.state.id2);

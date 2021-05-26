@@ -12,7 +12,7 @@ class Detail extends Component {
       note: "",
       price: "",
       wifi: "",
-      washing: "",
+      Washing: "",
       TV: "",
       refesher: "",
       Fridge: "",
@@ -31,7 +31,7 @@ class Detail extends Component {
           note: rs[id].Note,
           wifi: rs[id].Wifi,
           TV: rs[id].TV,
-          washing: rs[id].Washing,
+          Washing: rs[id].Washing,
           refesher: rs[id].refesher,
           Fridge: rs[id].Fridge,
           price: rs[id].price,
@@ -155,7 +155,7 @@ class Detail extends Component {
                             )}
                           </li>
                           <li className="mt--12">
-                            {this.state.washing === "1" ? (
+                            {this.state.Washing === "1" ? (
                               <span>Máy Giặt</span>
                             ) : (
                               ""

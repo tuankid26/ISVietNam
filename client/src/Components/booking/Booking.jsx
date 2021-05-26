@@ -1,8 +1,17 @@
 import { Component } from "react";
 import "./Booking.css";
+import Popup from '../Confirm/Confirm'
 class Booking extends Component {
-  
+  state = {
+    isOpen: false,
+  };
+  handleSubmit = () => {
+    this.setState({ isOpen: true });
+  };
 
+  togglePopup = () => {
+    this.setState({isOpen : false});
+  }
   render() {
     return (
       <div className="col-xs-4 col-sm-2 col-md-3">
@@ -85,10 +94,25 @@ class Booking extends Component {
                 </div>
               </div>
 
-              <button onClick={this.handleSubmit} className="btn btn-grad--primary px--6 mb--12 btn--sm btn--full bold rounded btn--shadow-primary">
+              <button
+                onClick={this.handleSubmit}
+                className="btn btn-grad--primary px--6 mb--12 btn--sm btn--full bold rounded btn--shadow-primary"
+              >
                 <span>Đặt ngay</span>
               </button>
             </div>
+            {this.state.isOpen && (
+              <Popup
+                content={
+                  <>
+                    <b>Xác nhận đặt phòng</b>
+                    <p> Tên khách hàng: </p>
+                    <button>Test button</button>
+                  </>
+                }
+                handleClose={this.togglePopup}
+              />
+            )}
           </div>
         </div>
       </div>
