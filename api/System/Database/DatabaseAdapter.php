@@ -1,31 +1,14 @@
 <?php
 
-/**
- *
- * This file is part of mvc-rest-api for PHP.
- *
- */
 namespace Database;
-
-/**
- * Class DatabaseAdapter for handel database query
- *
- * @author Mohammad Rahmani <rto1680@gmail.com>
- *
- * @package Database
- */
 class DatabaseAdapter {
     
     /**
-     *  Database Connection
-     *
      * @var
      */
     private $dbConnection;
 
     /**
-     * Database constructor. set connection driver [pdo, mysqli, mysql,...]
-     *
      * @param $driver
      * @param $hostname
      * @param $username

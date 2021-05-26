@@ -1,15 +1,5 @@
 <?php
-
-/**
- *
- * This file is part of mvc-rest-api for PHP.
- *
- */
 namespace Database\DB;
-
-/**
- *  Global Class PDO
- */
 final class PDO {
 
     /**

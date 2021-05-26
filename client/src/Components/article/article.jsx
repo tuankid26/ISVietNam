@@ -3,23 +3,27 @@ import "./article.scss";
 // import img from './hanoi1.png'
 
 class Article extends Component {
-  state = {
-    news : [],
-    title : []
+  constructor(){
+    super();
+    this.state = {
+      news : [],
+    }
+
   }
 
-  componentDidMount(){
+
+  componentDidMount() {
     fetch('http://localhost/ISVietNam/api/news')
         .then(response => response.json())
         .then(result => {
-            const rs = result.response.news.rows
-            this.setState({news : rs})
-            // this.setState({ news: [...this.state., 'new value'] })
-            console.log(this.state.news);
+          // console.log(result.response.news.rows)
+            this.setState({
+                news : result.response.news.rows,
+            })        
         })
-        .catch((error) => console.log("error", error)); 
-    }
+}
   render() {
+    // console.log(this.state.news)
     return (
       <section class="articles">
         <div class="article__content container container--pall">

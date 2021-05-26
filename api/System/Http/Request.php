@@ -1,19 +1,6 @@
 <?php
 
-/**
- *
- * This file is part of mvc-rest-api for PHP.
- *
- */
 namespace Http;
-
-/**
- * Class Request an http request
- *
- * @author Mohammad Rahmani <rto1680@gmail.com>
- *
- * @package Http
- */
 class Request {
 
     /**
@@ -44,7 +31,6 @@ class Request {
     }
 
     /**
-     *  Get $_GET parameter
      *
      * @param String $key
      * @return string
@@ -57,7 +43,6 @@ class Request {
     }
 
     /**
-     *  Get $_POST parameter
      *
      * @param String $key
      * @return string
@@ -70,7 +55,6 @@ class Request {
     }
 
     /**
-     *  Get POST parameter
      *
      * @param String $key
      * @return string
@@ -87,7 +71,6 @@ class Request {
     }
 
     /**
-     *  Get value for server super global var
      *
      * @param String $key
      * @return string
@@ -97,7 +80,6 @@ class Request {
     }
 
     /**
-     *  Get Method
      *
      * @return string
      */
@@ -105,8 +87,7 @@ class Request {
         return strtoupper($this->server('REQUEST_METHOD'));
     }
 
-    /**
-     *  Returns the client IP addresses.
+    /*
      *
      * @return string
      */
@@ -115,7 +96,6 @@ class Request {
     }
 
     /**
-     *  Script Name
      *
      * @return string
      */
@@ -124,7 +104,6 @@ class Request {
     }
 
     /**
-     * Clean Data
      *
      * @param $data
      * @return string
@@ -132,17 +111,12 @@ class Request {
     private function clean($data) {
         if (is_array($data)) {
             foreach ($data as $key => $value) {
-
-                // Delete key
                 unset($data[$key]);
-
-                // Set new clean key
                 $data[$this->clean($key)] = $this->clean($value);
             }
         } else {
             $data = htmlspecialchars($data, ENT_COMPAT, 'UTF-8');
         }
-
         return $data;
     }
 }

@@ -2,9 +2,6 @@ import React, {Component} from 'react';
 import Header from '../Components/header/header'
 import Footer from '../Components/footer/footer'
 import './css/News.css'
-// import img1 from '../images/Image/News/3.jpg'
-// import img2 from "../images/Image/News/4.jpg"
-// import img3 from "../images/Image/News/5.jpg"
 class News extends Component {
     state = {
         id :  this.props.match.params.id,
