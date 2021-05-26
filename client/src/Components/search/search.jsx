@@ -1,11 +1,18 @@
 import React, { Component } from 'react'
 import Suggestion from '../Suggestion/suggestion'
+// import { Redirect, useHistory, Link } from "react-router-dom";
+// import { withRouter } from 'react-router-dom';
 import './search.css'
 class Search extends Component {
-	state = {
-		query: '',
-		search: '',
-		results: []
+	constructor(props) {
+		super(props)
+		this.state = {
+			query: '',
+			search: '',
+			results: [],
+			redirect: '',
+			// history: useHistory(),
+		}
 	}
 	componentDidMount() {
 		fetch('http://localhost/ISVietNam/api/place')
@@ -14,34 +21,36 @@ class Search extends Component {
 				this.setState({
 					results: data.response.place.rows
 				})
-				// console.log(data.response.place.rows)
 			})
 	}
 	handleInputChange = (e) => {
-		// console.log(e.keyCode)
-		// if (e.keyCode === 8){
-		// 	this.setState({search: ''})
-		// }
-		console.log(e.target.value)
+		// console.log(e.target.value)
 		this.setState({
 			query: e.target.value,
 			search: e.target.value,
 
 		})
 	}
-	handleKeyDown = (e) => {
-		if (e.keyCode === 8) {
-			this.setState({
-				search: '',
-				query: ''
-			})
-		}
+	handleOnClick =(e)=> {
+		e.preventDefault();
+		console.log('/place/'.concat(this.state.redirect))
+		window.location.href = '/place/'.concat(this.state.redirect)
+		// this.props.history.push({
+		// 	pathname: '/place/'.concat(this.state.redirect),
+		// })
+		// console.log('/place/'.concat(this.state.redirect));
+
+		// <Redirect to={'/place/'.concat(this.state.redirect)} />
+		// console.log(this.props.h)
+		// this.state.history.push('/place'.concat())
+
 	}
 	handle = (e) => {
 		this.setState({
-			 search: e.target.innerHTML ,
-			 query: ''
-			})
+			search: e.target.innerHTML,
+			query: ''
+		})
+		this.state.results.filter((p) => p.name_place === e.target.innerHTML).map((id) => this.setState({ redirect: id.ID_place }))
 	}
 	Suggest() {
 		if (this.state.query.length > 0) {
@@ -49,21 +58,20 @@ class Search extends Component {
 		}
 	}
 	render() {
-		// console.log(this.state.search)
 		return (
 			<div className='wrap'>
 				<div className='search'>
-					{/* <button type="submit" class="searchButton"><i class="fas fa-search"></i></button> */}
+
 					<input
 						type='text'
 						class="searchTerm"
-						placeholder={this.state.search}
+						placeholder="Tìm kiếm địa điểm"
 						value={this.state.search}
-						// onKeyDown={this.handleKeyDown}
 						onChange={(e) => this.handleInputChange(e)}
 					></input>
-					<label htmlFor="" class="searchButton"><i class="fas fa-search"></i></label>
+					<button onClick={(e) => this.handleOnClick(e)} htmlFor="" class="searchButton"><i class="fas fa-search"></i></button>
 				</div>
+
 				{this.Suggest()}
 			</div>
 		)
