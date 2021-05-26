@@ -75,7 +75,9 @@ $font-xlg: 3.25rem;
       margin-bottom: 2.75rem;
     }    
   }
-
+  // &:hover {
+  //   transform: scale(1.05);
+  // }
   &__title {
     font-size: 1.25rem;
     font-weight: 300;
@@ -102,4 +104,14 @@ $font-xlg: 3.25rem;
   max-width: 69.375rem;
   margin: 0 auto;
 
+}
+.feature__item:hover {
+  transform: scale(1.05);
+}
+.feature__item {
+  border-radius: 0.3125rem;
+  overflow: hidden;
+  background-color: white;
+  // box-shadow: 0px 3px 12px rgb(0 0 0 / 15%);
+  transition: all 150ms ease-in-out;
 }

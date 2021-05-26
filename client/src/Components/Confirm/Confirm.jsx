@@ -7,6 +7,7 @@ const Popup = props => {
       <div className="box">
         <span className="close-icon" onClick={props.handleClose}>x</span>
         {props.content}
+        <button onClick= {props.handleConfirm}>Xác nhận </button>
       </div>
     </div>
   );

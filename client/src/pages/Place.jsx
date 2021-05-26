@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import Header from '../Components/header/header'
 import Footer from '../Components/footer/footer'
 // import './css/place.css'
@@ -8,54 +8,57 @@ import Footer from '../Components/footer/footer'
 import Promo from '../Components/promo/promo';
 class Place extends Component {
     state = {
-        id :  this.props.match.params.id,
-        ID_place:'',
-        ID_province:'',
-        title : "",
-        destination:"",
-        Paragraph_1 : "",
-        Paragraph_2 : "",
-        Paragraph_3 : "",
+        id: this.props.match.params.id,
+        ID_place: '',
+        ID_province: '',
+        title: "",
+        destination: "",
+        Paragraph_1: "",
+        Paragraph_2: "",
+        Paragraph_3: "",
     }
     componentDidMount() {
-       
+
         fetch('http://localhost/ISVietNam/api/place')
-            .then(response => response.json() )
+            .then(response => response.json())
             .then(result => {
                 const place = result.response.place.rows;
-                const id = this.state.id;
+                console.log(place)
+
+                const id = this.state.id - 1;
+                console.log(id)
                 this.setState({
-                    title : place[id].name_place,
+                    title: place[id].name_place,
                     destination: place[id].destination,
                     ID_place: place[id].ID_place,
-                    ID_province:place[id].ID_province,
-                    Paragraph_1 : place[id].Paragraph_1,
-                    Paragraph_2 : place[id].Paragraph_2,
-                    Paragraph_3 : place[id].Paragraph_3,
+                    ID_province: place[id].ID_province,
+                    Paragraph_1: place[id].Paragraph_1,
+                    Paragraph_2: place[id].Paragraph_2,
+                    Paragraph_3: place[id].Paragraph_3,
                 })
-                
-                console.log(place[id]);
+
+                console.log(place[id-1]);
             })
     }
     render() {
         return (
             <div >
                 <Header></Header>
-                <div className = 'place'>
-                    <div className = "place_header">
+                <div className='place'>
+                    <div className="place_header">
                         <h1 >{this.state.title}</h1>
-                        <p className= "td-post-sub-title"> {this.state.destination}</p>
+                        <p className="td-post-sub-title"> {this.state.destination}</p>
                     </div>
-                    <div className = "td-post-content">
+                    <div className="td-post-content">
                         <div className="container container-md">
                             <h3>Sơ lược</h3>
                             <p>{this.state.Paragraph_1}</p>
-                            <img alt="img1" src={` ../../images/Image/City/${this.state.ID_place}_1.jpg`} style = {{width : "1024px"}}></img>
+                            <img alt="img1" src={` ../../images/Image/City/${this.state.ID_place}_1.jpg`} style={{ width: "1024px" }}></img>
                         </div>
                         <div className="container container-md ">
                             <h3>Giới thiệu về địa điểm</h3>
                             <p>{this.state.Paragraph_2}</p>
-                            <img alt="img2" src={` ../../images/Image/City/${this.state.ID_place}_2.jpg`} style = {{width : "1024px"}}></img>
+                            <img alt="img2" src={` ../../images/Image/City/${this.state.ID_place}_2.jpg`} style={{ width: "1024px" }}></img>
                         </div>
                         {/* <div className="container container-md">
                         

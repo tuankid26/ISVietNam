@@ -234,7 +234,7 @@ class Detail extends Component {
                   </div>
                 </div>
               </div>
-              <Booking price={this.state.price}></Booking>
+              <Booking price={this.state.price} name={this.state.name_hotel}></Booking>
             </div>
           </div>
         </div>

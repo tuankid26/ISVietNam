@@ -10,7 +10,7 @@ class Location extends Component {
   };
   componentDidMount() {
     if (this.state.id === "1") this.setState({ city: "Hà Nội" });
-    if (this.state.id === "2") this.setState({ city: "Hồ Chí Minh" });
+    if (this.state.id === "2") this.setState({ city: "HCM" });
     if (this.state.id === "3") this.setState({ city: "Đà Nẵng" });
     if (this.state.id === "4") this.setState({ city: "Nha Trang" });
     if (this.state.id === "5") this.setState({ city: "Ninh Bình" });
@@ -25,15 +25,15 @@ class Location extends Component {
           <div className="location">
             <div id="mapWrap" className="wapper">
               <div className="container container--md">
+                <Filter city={this.state.city}></Filter>
                 <div className="el-row">
                   <div className="section mt--30">
                     <div className="row">
                       <h2 className="extra-bold col-xs- 12 col-md-9">
-                        50 hotel tại {this.state.city}
+                        50 hotel tại {this.state.id}
                       </h2>
                     </div>
                   </div>
-                  <Filter city={this.state.city}></Filter>
                 </div>
               </div>
             </div>
