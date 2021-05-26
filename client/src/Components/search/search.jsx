@@ -38,7 +38,10 @@ class Search extends Component {
 		}
 	}
 	handle = (e) => {
-		this.setState({ search: e.target.innerHTML })
+		this.setState({
+			 search: e.target.innerHTML ,
+			 query: ''
+			})
 	}
 	Suggest() {
 		if (this.state.query.length > 0) {

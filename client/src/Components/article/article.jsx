@@ -1,93 +1,46 @@
 import React, { Component } from "react";
 import "./article.scss";
+// import { Link } from 'react-router-dom'
 // import img from './hanoi1.png'
 
 class Article extends Component {
-  constructor(){
+  constructor() {
     super();
     this.state = {
-      news : [],
+      news: [],
     }
-
   }
-
-
   componentDidMount() {
     fetch('http://localhost/ISVietNam/api/news')
-        .then(response => response.json())
-        .then(result => {
-          // console.log(result.response.news.rows)
-            this.setState({
-                news : result.response.news.rows,
-            })        
+      .then(response => response.json())
+      .then(result => {
+        this.setState({
+          news: result.response.news.rows,
         })
-}
+      })
+  }
   render() {
-    // console.log(this.state.news)
+    const { news } = this.state
     return (
+
       <section class="articles">
+        {console.log(news)}
         <div class="article__content container container--pall">
-          <h2>Tin Tức</h2>
-
+          <h2>Tin Tức Nổi Bật</h2>
           <div class="article__grid">
-            <a href="/" class="article__item">
-              <div class="article__image"></div>
-              <div class="article__text">
-                <div class="article__author">By </div>
-                <div class="article__title">
-                  {/* {this.state.news[0].title} */}
+            {news && news.filter((_,k) => (k < 4)).map((r)=>
+              <a href={"/news/".concat(r.ID_news - 1) }class="article__item">
+                <div class="article__image"><img src={'/images/Image/'.concat(r.Image_1)} alt="" /></div>
+                <div class="article__text">
+                  <div class="article__author">{r.author}</div>
+                  <div class="article__title">{r.title}
+                  </div>
+                  <div class="article__description">
+                    {r.Paragraph_1.substr(0,100).concat('...')}
+                  </div>
                 </div>
-                <div class="article__description">
-                  The world is getting smaller and we’re becoming more mobile.
-                  So why should you be forced to only receive money in a single
-                  …
-                </div>
-              </div>
-            </a>
-
-            <a href="/" class="article__item">
-              <div class="article__image"></div>
-              <div class="article__text">
-                <div class="article__author">By Wilson Hutton</div>
-                <div class="article__title">
-                  Treat yourself without worrying about money
-                </div>
-                <div class="article__description">
-                  Our simple budgeting feature allows you to separate out your
-                  spending and set realistic limits each month. That means you …
-                </div>
-              </div>
-            </a>
-
-            <a href="/" class="article__item">
-              <div class="article__image"></div>
-              <div class="article__text">
-                <div class="article__author">By Wilson Hutton</div>
-                <div class="article__title">
-                  Take your Easybank card wherever you go
-                </div>
-                <div class="article__description">
-                  We want you to enjoy your travels. This is why we don’t charge
-                  any fees on purchases while you’re abroad. We’ll even show you
-                  …
-                </div>
-              </div>
-            </a>
-
-            <a href="/" class="article__item">
-              <div class="article__image"></div>
-              <div class="article__text">
-                <div class="article__author">By Claire Robinson</div>
-                <div class="article__title">
-                  Our invite-only Beta accounts are now live!
-                </div>
-                <div class="article__description">
-                  After a lot of hard work by the whole team, we’re excited to
-                  launch our closed beta. It’s easy to request an invite through
-                  the site …
-                </div>
-              </div>
-            </a>
+              </a>
+            )}
           </div>
         </div>
       </section>
