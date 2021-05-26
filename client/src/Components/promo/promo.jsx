@@ -17,26 +17,6 @@ class Promo extends Component {
         const rs = result.response.hotel.rows;
         this.setState({ data: result.response.hotel.rows });
         // console.log(this.props.id);
-        var k = 0;
-        var i;
-        for (i = 0; i < this.state.length; i++) {
-          if (rs[i].ID_place === this.props.id) {
-            k++;
-            console.log(k);
-            if (k === 1) {
-              this.setState({ id1: i });
-            }
-            if (k === 2) {
-              this.setState({ id2: i });
-            }
-            if (k === 3) {
-              this.setState({ id3: i });
-            }
-            if (k === 4) {
-              this.setState({ id4: i });
-            }
-          }
-        }
         // console.log(this.state.id2);
       })
       .catch((error) => console.log("error", error));
