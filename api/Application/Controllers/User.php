@@ -27,13 +27,6 @@ class ControllersUser extends Controller {
     {
         header('Content-type: application/json');
         $data = json_decode(file_get_contents('php://input'), true);
-        // $data =
-
-        //     ['username' => 'bmtuan',
-
-        //     'password' => '123123',
-        //     ];
-            // print_r($this->_model->create_user($data));
         if ($this->_model->create_user($data)){
             $user = ($this->_model->find_username($data['username']));
             $user = $user[0];
