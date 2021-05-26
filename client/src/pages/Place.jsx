@@ -18,8 +18,9 @@ class Place extends Component {
         Paragraph_3 : "",
     }
     componentDidMount() {
+       
         fetch('http://localhost/ISVietNam/api/place')
-            .then(response => response.json())
+            .then(response => response.json() )
             .then(result => {
                 const place = result.response.place.rows;
                 const id = this.state.id;
@@ -62,7 +63,7 @@ class Place extends Component {
                             <img alt="img3" src={` ../../images/Image/City/${this.state.ID_place}_${this.state.ID_province}.jpg`} style = {{width : "1024px"}}></img>
                         </div>
                     </div>
-                    <Promo></Promo>
+                    <Promo id={this.state.ID_place}></Promo>
                 </div>
                 <Footer></Footer>
             </div>

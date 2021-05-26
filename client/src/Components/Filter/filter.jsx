@@ -57,7 +57,7 @@ class Filter extends Component {
                 </select>
                     {/* <li key='12312'>123123</li> */}
                     {data.filter((p) => p.district === this.state.district).map((r, k) => {
-                        // console.log(r.name_place)
+                        console.log(r.name_place)
                         // <p>{r.name_place}</p>
                         return null
                     })}

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./article.scss";
+import {Link} from 'react-router-dom'
 // import img from './hanoi1.png'
 
 class Article extends Component {
@@ -26,7 +27,7 @@ class Article extends Component {
           <h2>Tin Tức</h2>
 
           <div class="article__grid">
-            <a href="/" class="article__item">
+            <Link href="/news/1" class="article__item">
               <div class="article__image"></div>
               <div class="article__text">
                 <div class="article__author">By </div>
@@ -39,7 +40,7 @@ class Article extends Component {
                   …
                 </div>
               </div>
-            </a>
+            </Link>
 
             <a href="/" class="article__item">
               <div class="article__image"></div>

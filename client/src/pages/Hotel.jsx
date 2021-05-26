@@ -3,11 +3,8 @@ import Header from '../Components/header/header'
 import Gallery from '../Components/Gallery/Gallery'
 import Detail from '../Components/Detail/Detail'
 import Footer from '../Components/footer/footer'
-<<<<<<< HEAD
-=======
 // import {HOST_URL} from "../config";
 // import Booking from '../Components/booking/Booking'
->>>>>>> 024f1ea3c777516e14afd52939ef160cc200c016
 class Hotel extends Component {
     state = {
         id : this.props.match.params.id,
