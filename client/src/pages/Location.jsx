@@ -25,16 +25,17 @@ class Location extends Component {
           <div className="location">
             <div id="mapWrap" className="wapper">
               <div className="container container--md">
-                <Filter city={this.state.city}></Filter>
+                {/* <Filter city={this.state.city}></Filter> */}
                 <div className="el-row">
                   <div className="section mt--30">
                     <div className="row">
                       <h2 className="extra-bold col-xs- 12 col-md-9">
-                        50 hotel tại {this.state.id}
+                        50 hotel tại {this.state.city}
                       </h2>
                     </div>
                   </div>
                 </div>
+                <Filter city={this.state.city}></Filter>
               </div>
             </div>
           </div>

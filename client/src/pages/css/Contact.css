@@ -1,0 +1,27 @@
+.container-cf {
+    margin-bottom: 6%;
+    margin-left: 20%;
+}
+
+.input-message {
+    background-color: #eee;
+    border: none;
+    padding: 12px 15px;
+    margin: 8px 0;
+    width: 500px;
+    height: 150px  ;
+}
+
+.btn-contact {
+    border-radius: 20px;
+	border: 1px solid #FF4B2B;
+	background-color: #ff752b;
+	background-image: none;
+	color: #FFFFFF;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 12px 45px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	transition: transform 80ms ease-in;
+}

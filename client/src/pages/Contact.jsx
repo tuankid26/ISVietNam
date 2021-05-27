@@ -16,7 +16,8 @@ class Contact extends React.Component {
     return (
       <div className="Contact">
         <Header></Header>
-        <h1>Contact With ISVietNam</h1>
+        <div className = 'container container-sign container-cf' >
+        <h1 style={{marginLeft:'26%',fontWeight:700, marginTop:'6%'}}>Contact With ISVietNam</h1>
         <form
           className="cf"
           id="contact-form"
@@ -25,6 +26,7 @@ class Contact extends React.Component {
         >
           <div className="half left cf">
             <input
+              className = "input-login"
               type="text"
               id="input-name"
               placeholder="Name"
@@ -32,17 +34,19 @@ class Contact extends React.Component {
               onChange={this.onNameChange.bind(this)}
             />
             <input
+              className = "input-login"
               type="email"
               id="input-email"
               placeholder="Email address"
               value={this.state.email}
               onChange={this.onEmailChange.bind(this)}
             />
-            <input type="text" id="input-subject" placeholder="Subject" />
+            <input type="text" className = "input-login" id="input-subject" placeholder="Subject" />
           </div>
-          <div className="half right cf">
-            <textarea
-              name="message"
+          <div className='half left cf'>
+            <input
+              className = "input-message"
+              // name="message"
               type="text"
               id="input-message"
               placeholder="Message"
@@ -51,8 +55,9 @@ class Contact extends React.Component {
               onChange={this.onMessageChange.bind(this)}
             />
           </div>
-          <input type="submit" defaultValue="Submit" id="input-submit" />
+          <button className='btn btn-contact' defaultValue="Submit" id="input-submit" >Send</button>
         </form>
+        </div>
         <Footer></Footer>
       </div>
     );
@@ -73,7 +78,7 @@ class Contact extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
 
-    fetch("http://localhost:3000/contact", {
+    fetch("http://localhost/ISVietNam/api/contact", {
       method: "POST",
       body: JSON.stringify(this.state),
       headers: {

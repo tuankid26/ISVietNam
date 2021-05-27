@@ -39,7 +39,8 @@ class Feature extends Component {
 
           <div class="feature__grid">
             <a class="feature__item" href='/location/1'>
-              <div class="feature__icon"><img src="/images/Image/Home/hanoi.jpg" alt="Hà nội" /></div>
+              
+              <div class="feature__icon"><img src="/images/Image/Home/hanoi.png" alt="Hà nội" /></div>
               <div class="feature__title">
                 Hà Nội
             </div>
@@ -49,7 +50,7 @@ class Feature extends Component {
             </a>
 
             <a class="feature__item" href='/location/2'>
-              <div class="feature__icon"><img src="/images/Image/Home/TPHCM.jpg" alt="Hồ Chí Minh" /></div>
+              <div class="feature__icon"><img src="/images/Image/Home/TPHCM.png" alt="Hồ Chí Minh" /></div>
               <div class="feature__title">
                 Hồ Chí Minh
             </div>
@@ -59,7 +60,7 @@ class Feature extends Component {
             </a>
 
             <a class="feature__item" href='/location/3'>
-              <div class="feature__icon"><img src="/images/Image/Home/danang.jpg" alt="Đà Nẵng" /></div>
+              <div class="feature__icon"><img src="/images/Image/Home/danang.png" alt="Đà Nẵng" /></div>
               <div class="feature__title">
                 Đà Nẵng
             </div>
@@ -69,7 +70,7 @@ class Feature extends Component {
             </a>
 
             <a class="feature__item" href='/location/4'>
-              <div class="feature__icon"><img src="/images/Image/Home/dalat.jpg" alt="Đà Lạt" /></div>
+              <div class="feature__icon"><img src="/images/Image/Home/dalat.png" alt="Đà Lạt" /></div>
               <div class="feature__title">
                 Nha Trang
             </div>
@@ -79,7 +80,7 @@ class Feature extends Component {
             </a>
 
             <a class="feature__item" href='/location/5'>
-              <div class="feature__icon"><img src="/images/Image/Home/ninhbinh.jpg" alt="Ninh Bình" /></div>
+              <div class="feature__icon"><img src="/images/Image/Home/ninhbinh.png" alt="Ninh Bình" /></div>
               <div class="feature__title">
                 Ninh Bình
             </div>

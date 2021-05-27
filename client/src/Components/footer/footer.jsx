@@ -10,7 +10,7 @@ class Footer extends Component {
         <div class="container">
     
             <a class="footer__logo" href='/'>
-               <img src='../../../public/images/Logo/logo.jpg' alt='ISVietNam'></img>
+               <img src='../../images/Logo/logo.jpg' alt='ISVietNam'></img>
               </a>
           
               <div class="footer__social">
@@ -33,19 +33,17 @@ class Footer extends Component {
           
               <div class="footer__links col1">
                 <a href="/">About Us</a>
-                <a href="/">Contact</a>
-                <a href="/">Blog</a>
+                <a href="/contact">Contact</a>
+                <a href="/news">News</a>
               </div>
           
               <div class="footer__links col2">
-                <a href="/">Careers</a>
-                <a href="/">Support</a>
-                <a href="/">Privacy Policy</a>
+                {/* <p> Sản phẩm của ISVietNam </p> */}
               </div>
           
-              <div class="footer__cta">
+              {/* <div class="footer__cta">
                 <a href="/" class="button">Request Invite</a>
-              </div>
+              </div> */}
           
               <div class="footer__copyright">
                     We are ISVietNam

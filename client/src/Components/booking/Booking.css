@@ -66,9 +66,9 @@
     margin-top: 1rem;
 }
 
-input:not(.input--square), select:not(.input--square), textarea:not(.input--square) {
+/* input:not(.input--square), select:not(.input--square), textarea:not(.input--square) {
     border-radius: 3rem;
-}   
+}    */
 .input-group__custom input {
     border-radius: 4px;
 }

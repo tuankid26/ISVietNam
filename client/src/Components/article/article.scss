@@ -51,6 +51,8 @@ $font-xlg: 3.25rem;
 
   &__grid {
     display: grid;
+    margin-top: 4%;
+    margin-bottom: 3%;
     grid-template-columns: 1fr;
     gap: 1.875rem;
 

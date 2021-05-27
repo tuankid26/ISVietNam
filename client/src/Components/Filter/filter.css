@@ -1,0 +1,40 @@
+.filter_gird{
+    margin-top: 10%;
+}
+
+.filter-title {
+    background-color: #fff;
+    padding: .375rem .75rem;
+    border: 1px solid #9ca1a5;
+    color: #6c757d;
+    border-radius: 0;
+    line-height: 1.5;
+    position: relative;
+    z-index: 999;
+    cursor: pointer;
+    width: 80%;
+    margin-left: 20px;
+    text-align: right;
+}
+.filter-title.active {
+    -webkit-box-shadow: 0 0 0 3px rgb(0 123 255 / 25%);
+    -moz-box-shadow: 0 0 0 3px rgba(0,123,255,.25);
+    box-shadow: 0 0 0 3px rgb(0 123 255 / 25%);
+}
+.filter-title.chosen {
+    color: #333;
+}
+.province {
+    border: none;
+	padding: 12px 15px;
+	margin: 8px 0;
+	width: 80%;
+    text-align: left;
+}
+.district{
+    border: none;
+	padding: 12px 15px;
+	margin: 8px 0;
+	width: 80%;
+    text-align: left;
+}

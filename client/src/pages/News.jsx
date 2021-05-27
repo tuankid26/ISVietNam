@@ -19,6 +19,8 @@ class News extends Component {
             .then(result => {
                 const data = result.response.news.rows;
                 const id = this.state.id;
+            //     const id1 = 1 
+            //    this.setState({id : id1})
                 console.log(this.state.id)
                 if (id)
                     this.setState({
@@ -42,7 +44,7 @@ class News extends Component {
                     <div className='news'>
                         <div className="new_header container-md">
                             <h1 >{this.state.title}</h1>
-                            <p className="td-post-sub-title"> Tạp chí du lịch Anh, đã chỉ ra những resort đẳng cấp bậc nhất ở Việt Nam, hứa hẹn thỏa mãn mọi nhu cầu của các vị khách khó tính. </p>
+                            <p className="td-post-sub-title"> Tạp chí du lịch Anh, đã chỉ ra những thông tin đẳng cấp bậc nhất ở Việt Nam, hứa hẹn thỏa mãn mọi nhu cầu của các vị khách khó tính. </p>
                             <div className="td-module-meta-info">
                                 <div className="td-author-name">
                                     <div className="td-author-by">
@@ -55,17 +57,17 @@ class News extends Component {
                             <div className="container container-md">
                                 {/* <h3>Tên đoạn 1</h3> */}
                                 <p>{this.state.Paragraph_1}</p>
-                                <img alt="img1" src='../../images/Image/News/3.jpg' style={{ width: "auto" }}></img>
+                                <img alt="img1" src={`../../images/Image/News/${parseInt(this.state.id)+1}_1.jpg`} style={{ width: "auto" }}></img>
                             </div>
                             <div className="container container-md ">
                                 {/* <h3>Tên đoạn 2</h3> */}
                                 <p>{this.state.Paragraph_2}</p>
-                                <img alt="img2" src='../../images/Image/News/4.jpg' style={{ width: "auto" }}></img>
+                                <img alt="img2" src={`../../images/Image/News/${parseInt(this.state.id)+1}_2.jpg`} style={{ width: "auto" }}></img>
                             </div>
                             <div className="container container-md">
                                 {/* <h3>Tên đoạn 3</h3> */}
                                 <p>{this.state.Paragraph_3}</p>
-                                <img alt="img3" src='../../images/Image/News/5.jpg' style={{ width: "auto" }}></img>
+                                <img alt="img3" src={`../../images/Image/News/${parseInt(this.state.id)+1}_3.jpg`} style={{ width: "auto" }}></img>
                             </div>
                         </div>
                     </div>
