@@ -20,6 +20,7 @@ class Hotel extends Component {
     img1: "",
     img2: "",
     img3: "",
+    ID_place: "",
   };
   componentDidMount() {
     fetch("http://localhost/ISVietNam/api/hotel")
@@ -31,8 +32,9 @@ class Hotel extends Component {
           img1: rs[id].path_image_hotel,
           img2: rs[id].path_image_hotel2,
           img3: rs[id].path_image_hotel3,
+          ID_place: rs[id].ID_place,
         });
-        console.log(`../images/Image/${this.state.img1}`);
+        // console.log(`../images/Image/${this.state.img1}`);
         const img = [
           { src: `../images/Image/${this.state.img1}`, caption: " " },
           { src: `../images/Image/${this.state.img2}`, caption: " " },
@@ -55,7 +57,7 @@ class Hotel extends Component {
             mode={`automatic`}
             timeout={`4000`}
           ></Gallery>
-          <Detail id={this.state.id}></Detail>
+          <Detail id={this.state.id} ID_place={this.state.ID_place}></Detail>
         </div>
         <Footer></Footer>
       </div>

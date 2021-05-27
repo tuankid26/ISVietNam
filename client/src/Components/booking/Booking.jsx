@@ -3,17 +3,30 @@ import "./Booking.css";
 import Popup from "../Confirm/Confirm";
 class Booking extends Component {
   state = {
+    id: this.props.id,
     isOpen: false,
     name_hotel: this.props.name,
     price: this.props.price,
     Name: "",
-    Phone: 0,
+    Phone: "",
     Customer: 0,
     TimeTo: "",
     TimeOut: "",
     data: [],
+    data_hotel: [],
   };
 
+  componentDidMount() {
+    fetch("http://localhost/ISVietNam/api/hotel")
+      .then((response) => response.json())
+      .then((result) => {
+        const rs = result.response.hotel.rows;
+        const id = this.state.id;
+        this.setState({ data_hotel: rs[id] });
+        console.log(rs[id]);
+      })
+      .catch((error) => console.log("error", error));
+  }
   handleChange = (event) => {
     if (event.target.name === "Name")
       this.setState({ Name: event.target.value });
@@ -28,16 +41,19 @@ class Booking extends Component {
     // if (event.target.name === 'repeatPassword') this.setState({ repeatPassword: event.target.value })
   };
 
-  handleSubmit = () => {
+  handleSubmit = (e) => {
+    e.preventDefault();
     this.setState({ isOpen: true });
-    const data = [
-      { Name: this.state.Name },
-      { Phone: this.state.Phone },
-      { Customer: this.state.Customer },
-      { TimeTo: this.state.TimeTo },
-      { TimeOut: this.state.TimeOut },
-    ];
-    this.setState({ data: data });
+    // const data = [
+    //   { ID_hotel: this.state.id},
+    //   { Name: this.state.Name },
+    //   { Phone: this.state.Phone },
+    //   { Customer: this.state.Customer },
+    //   { TimeTo: this.state.TimeTo },
+    //   { TimeOut: this.state.TimeOut },
+    // ];
+    // this.setState({ data: data });
+    // console.log(data)
   };
 
   togglePopup = () => {
@@ -45,20 +61,33 @@ class Booking extends Component {
   };
 
   handleConfirm = () => {
+    const data = {
+      ID_hotel: this.state.id,
+      Name: this.state.Name,
+      Phone: this.state.Phone,
+      Customer: this.state.Customer,
+      TimeTo: this.state.TimeTo,
+      TimeOut: this.state.TimeOut,
+    };
+    // console.log(data);
     fetch("http://localhost/ISVietNam/api/booking", {
-      method: "PUT", // or 'PUT'
+      method: "POST", // or 'PUT'
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(this.state.data),
+      body: JSON.stringify(data),
     })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log("Success:", data);
+      .then(response => { return response.json() })
+      // .then((text) => console.log(text.))
+      .then( (data) => {
+        console.log("Success:", data.response);
       })
       .catch((error) => {
         console.error("Error:", error);
       });
+
+      this.setState({ isOpen: false });
+      alert ("Xác nhận thành công !")
   };
   render() {
     return (
@@ -79,88 +108,101 @@ class Booking extends Component {
                   <strong>23/03</strong> đến <strong>31/05</strong>
                 </p>
               </div>
-              <div className="input-group input-group__custom">
-                <input
-                  placeholder="Tên Khách hàng"
-                  data-vv-as="Tên Khách hàng"
-                  name="Name"
-                  onChange={this.handleChange}
-                  className="input"
-                  aria-required="true"
-                  aria-invalid="true"
-                />{" "}
-              </div>
-              <div className="input-group input-group__custom">
-                <div className="phone-input input">
-                  <div className="phone-input__wrapper fl-item-stretch">
-                    <input
-                      type="number"
-                      name="Phone"
-                      onChange={this.handleChange}
-                      min="1"
-                      className="input"
-                      placeholder="Số điện thoại"
-                      data-vv-as="Số điện thoại"
-                    />
+              <form onSubmit = {this.handleSubmit}>
+                <div className="input-group input-group__custom">
+                  <input
+                    placeholder="Tên Khách hàng"
+                    data-vv-as="Tên Khách hàng"
+                    name="Name"
+                    onChange={this.handleChange}
+                    className="input"
+                    aria-required="true"
+                    aria-invalid="true"
+                    required
+                  />{" "}
+                </div>
+                <div className="input-group input-group__custom">
+                  <div className="phone-input input">
+                    <div className="phone-input__wrapper fl-item-stretch">
+                      <input
+                        pattern="(84|0[3|5|7|8|9])+([0-9]{8})"
+                        type="text"
+                        name="Phone"
+                        onChange={this.handleChange}
+                        className="input"
+                        placeholder="Số điện thoại"
+                        data-vv-as="Số điện thoại"
+                        required
+                      />
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div className="input-group input-group__custom">
-                <div className="customer-input input">
-                  <div className="customer-input__wrapper fl-item-stretch">
-                    <input
-                      type="number"
-                      name="Customer"
-                      onChange={this.handleChange}
-                      min="1"
-                      className="input"
-                      placeholder="Số khách"
-                      data-vv-as="Số khách"
-                    />
+                <div className="input-group input-group__custom">
+                  <div className="customer-input input">
+                    <div className="customer-input__wrapper fl-item-stretch">
+                      <input
+                        type="number"
+                        name="Customer"
+                        onChange={this.handleChange}
+                        min="1"
+                        className="input"
+                        placeholder="Số khách"
+                        data-vv-as="Số khách"
+                        required
+                      />
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div className="input-group input-group__custom">
-                <div className="time-input input">
-                  <div className="time-input__wrapper fl-item-stretch">
-                    <span className="time">Ngày đến</span>
-                    <input
-                      type="text"
-                      name="TimeTo"
-                      className="time"
-                      onChange={this.handleChange}
-                      placeholder="Ngày / tháng / năm"
-                      data-vv-as="Ngày đến"
-                    />
-                  </div>
-                  <div className="time-input__wrapper fl-item-stretch">
-                    <span className="time">Ngày đi</span>
-                    <input
-                      type="text"
-                      name="TimeOut"
-                      onChange={this.handleChange}
-                      className="TimeOut"
-                      placeholder="Ngày / tháng / năm"
-                      data-vv-as="Ngày đi"
-                    />
+                <div className="input-group input-group__custom">
+                  <div className="time-input input">
+                    <div className="time-input__wrapper fl-item-stretch">
+                      <span className="time">Ngày đến</span>
+                      <input
+                        type="Date"
+                        name="TimeTo"
+                        className="time"
+                        onChange={this.handleChange}
+                        placeholder= "Ngày / tháng / năm"
+                        data-vv-as= "Ngày đến"
+                        required
+                      />
+                    </div>
+                    <div className="time-input__wrapper fl-item-stretch">
+                      <span className="time">Ngày đi</span>
+                      <input
+                        type="Date"
+                        name="TimeOut"
+                        onChange={this.handleChange}
+                        className="TimeOut"
+                        placeholder="Ngày / tháng / năm"
+                        data-vv-as="Ngày đi"
+                        required
+                      />
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              <button
-                onClick={this.handleSubmit}
-                className="btn btn-grad--primary px--6 mb--12 btn--sm btn--full bold rounded btn--shadow-primary"
-              >
-                <span>Đặt ngay</span>
-              </button>
+                <button
+                  // onClick={this.handleSubmit}
+                  className="btn btn-grad--primary px--6 mb--12 btn--sm btn--full bold rounded btn--shadow-primary"
+                >
+                  <span>Đặt ngay</span>
+                </button>
+              </form>
             </div>
             {this.state.isOpen && (
               <Popup
                 content={
                   <>
-                    <b>Xác nhận đặt phòng {this.state.name_hotel}</b>
-                    <p className="fadeIn">Giá Phòng:
-                      <span className="extra-bold"> {this.state.price}</span>
+                    <b>
+                      Xác nhận đặt phòng {this.state.data_hotel?.name_hotel}
+                    </b>
+                    <p className="fadeIn">
+                      Giá Phòng:
+                      <span className="extra-bold">
+                        {" "}
+                        {this.state.data_hotel?.price}
+                      </span>
                       <span className="p--small">/1 đêm</span>
                     </p>
                     <p> Tên khách hàng: {this.state.Name} </p>

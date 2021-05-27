@@ -13,7 +13,7 @@ class ControllersBooking extends Controller {
     {
         header('Content-type: application/json');
         $data = json_decode(file_get_contents('php://input'), true);
-        print_r($data);
+        // print_r($data);
         if ($this->_model->insert_booking($data)){   
             $response = 'Success';
             $this->response->sendStatus(200);

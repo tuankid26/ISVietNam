@@ -67,7 +67,11 @@ class Filter extends Component {
         : data.filter((p) => p.province === this.state.province);
     return (
       <div className="filter">
-        <p>Bộ lọc</p>
+        <p className='filter-text'> 
+          <span>
+          <img className='icon-filter' src='/images/Icon/filter.png' alt='icon-filter' /></span>
+          Bộ lọc
+        </p>
         <div className='province'>
         {/* <label htmlFor="">Tỉnh/Thành phố:</label> */}
 

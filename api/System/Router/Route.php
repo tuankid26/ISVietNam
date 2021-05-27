@@ -1,19 +1,8 @@
 <?php
 
-/**
- *
- * This file is part of mvc-rest-api for PHP.
- *
- */
+
 namespace Router;
 
-/**
- * Class Route For Save Route
- *
- * @author Mohammad Rahmani <rto1680@gmail.com>
- *
- * @package Router
- */
 final class Route {
     
     /**

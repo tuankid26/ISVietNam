@@ -38,3 +38,15 @@
 	width: 80%;
     text-align: left;
 }
+
+.icon-filter {
+    width: 32px;
+}
+
+.filter-text {
+    font-size: 26px;
+    font-weight: 480;
+    margin-left: 3%;
+    color: #e96deb;
+    font-family: ui-serif;
+}

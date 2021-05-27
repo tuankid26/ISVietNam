@@ -3,7 +3,10 @@
     margin: auto;
     padding: 0 1.25rem;
 }
-
+.icon{
+    width: 20px;
+    height: 20px;
+}
 .detail-left {
     padding-right: 50px;
 }

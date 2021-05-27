@@ -6,6 +6,7 @@ import Footer from '../Components/footer/footer'
 // import img2 from '/images/Image/News/2.jpg'
 // import img3 from '/images/Image/News/3.jpg'
 import Promo from '../Components/promo/promo';
+import './css/Place.css'
 class Place extends Component {
     state = {
         id: this.props.match.params.id,
@@ -16,6 +17,8 @@ class Place extends Component {
         Paragraph_1: "",
         Paragraph_2: "",
         Paragraph_3: "",
+        province: '',
+        district: ''
     }
     componentDidMount() {
 
@@ -35,6 +38,8 @@ class Place extends Component {
                     Paragraph_1: place[id].Paragraph_1,
                     Paragraph_2: place[id].Paragraph_2,
                     Paragraph_3: place[id].Paragraph_3,
+                    province: place[id].province,
+                    district: place[id].district
                 })
 
                 console.log(place[id-1]);
@@ -47,6 +52,7 @@ class Place extends Component {
                 <div className='place'>
                     <div className="place_header">
                         <h1 >{this.state.title}</h1>
+                        <span style={{marginLeft:'10px',fontStyle:'italic'}}> Vị trí: {this.state.district} , {this.state.province}</span>
                         <p className="td-post-sub-title"> {this.state.destination}</p>
                     </div>
                     <div className="td-post-content">
@@ -66,7 +72,7 @@ class Place extends Component {
                             <img alt="img3" src={` ../../images/Image/City/${this.state.ID_place}_3.jpg`} style = {{width : "1024px"}}></img>
                         </div> */}
                     </div>
-                    <Promo id={this.state.ID_place}></Promo>
+                    <Promo id={this.state.ID_place} province={this.state.province} district={this.state.district}></Promo>
                 </div>
                 <Footer></Footer>
             </div>

@@ -51,8 +51,9 @@ class Promo extends Component {
                         {p?.price} /đêm
                       </div>
                       <div class="promo__description">
+                        {/* Vị trí : {this.props.district} , {this.props.province} */}
                         Phòng đơn: 1 phòng ngủ, 2 khách <br />
-                        Diện tích : 55m2 <br />
+                        Khoảng cách : {p?.distance} <br />
                       </div>
                     </div>
                   </a>

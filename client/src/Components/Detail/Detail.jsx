@@ -4,6 +4,7 @@ import Booking from "../booking/Booking";
 
 import "./Detail.css";
 // import arrow from './icon-arrow.png'
+// const ID_place = this.props.ID_place
 class Detail extends Component {
   constructor(props) {
     super(props);
@@ -14,25 +15,31 @@ class Detail extends Component {
       wifi: "",
       Washing: "",
       TV: "",
-      refesher: "",
+      Refesher: "",
       Fridge: "",
       id: this.props.id,
+      ID_place: this.props.ID_place,
+      province: " ",
+      district: " ",
     };
   }
 
   componentDidMount() {
+    console.log(this.state.ID_place);
     fetch("http://localhost/ISVietNam/api/hotel")
       .then((response) => response.json())
       .then((result) => {
         const rs = result.response.hotel.rows;
         const id = this.state.id;
+        console.log(rs);
         this.setState({
           name_hotel: rs[id].name_hotel,
+          ID_place: rs[id].ID_place,
           note: rs[id].Note,
           wifi: rs[id].Wifi,
           TV: rs[id].TV,
           Washing: rs[id].Washing,
-          refesher: rs[id].refesher,
+          Refesher: rs[id].Refesher,
           Fridge: rs[id].Fridge,
           price: rs[id].price,
         });
@@ -49,23 +56,6 @@ class Detail extends Component {
               <div className="col col-md-9 col-xs-12 ">
                 <div className="detail-left">
                   <div className="section">
-                    <div className="breadcrumbs middle-xs  d-sm-flex">
-                      <a href="/" className="nut-link-active">
-                        ISVietNam
-                      </a>
-                      <i className="icon-arrow-right"></i>
-                      <span className="is-flex middle-xs">
-                        <a href="/"> Hà Nội</a>
-                        <i className="icon-arrow-right"></i>
-                      </span>
-                      <span className="is-flex middle-xs">
-                        <a href="/"> Hai Bà Trưng</a>
-                        <i className="icon-arrow-right"></i>
-                      </span>
-                      <span className="is-flex middle-xs">
-                        <a href="/"> Phường Bách Khoa</a>
-                      </span>
-                    </div>
                     <section>
                       <div className="row">
                         <div className="col-xs-8 col-sm-10">
@@ -77,7 +67,7 @@ class Detail extends Component {
                                 </h1>
                               </div>
                             </div>
-                            <div className="detail-location is-flex middle-xs start-md mt--18">
+                            {/* <div className="detail-location is-flex middle-xs start-md mt--18">
                               <div>
                                 <svg
                                   className="svg-icon svg-fill"
@@ -85,10 +75,10 @@ class Detail extends Component {
                                   height="24px"
                                 ></svg>
                                 <span className="ml--6 bold">
-                                  Trực Ninh, Nam Định, Việt Nam{" "}
+                                  {this.props.district}
                                 </span>
                               </div>
-                            </div>
+                            </div> */}
                             <div className="detail__type is-short-intro is-flex">
                               <div>
                                 <p className="mb--0">
@@ -135,34 +125,75 @@ class Detail extends Component {
                         <h4 className="mt--24 mb--0">Tiện ích</h4>
                         <ul className="list list--3 is-flex">
                           <li className="mt--12">
-                            {this.state.wifi === "1" ? <span>Wifi</span> : ""}
+                            {this.state.wifi === "1" ? (
+                              <div>
+                                <img
+                                  className="icon"
+                                  src="/images/Icon/wifi.png"
+                                  alt="icon"
+                                />
+                                <span>Wifi</span>
+                              </div>
+                            ) : (
+                              ""
+                            )}
                           </li>
                           <li className="mt--12">
-                            {this.state.TV === "1" ? <span>Ti Vi</span> : ""}
+                            {this.state.TV === "1" ? (
+                              <div>
+                                <img
+                                  className="icon"
+                                  src="/images/Icon/television.png"
+                                  alt="icon"
+                                />
+                                <span>Ti Vi</span>{" "}
+                              </div>
+                            ) : (
+                              ""
+                            )}
                           </li>
                           <li className="mt--12">
                             {this.state.Fridge === "1" ? (
-                              <span>Tủ Lạnh</span>
+                              <div>
+                                <img
+                                  className="icon"
+                                  src="/images/Icon/fridge.png"
+                                  alt="icon"
+                                />
+                                <span>Tủ Lạnh</span>
+                              </div>
                             ) : (
                               ""
                             )}
                           </li>
                           <li className="mt--12">
-                            {this.state.refesher === "1" ? (
-                              <span>Điều hòa</span>
+                            {this.state.Refesher === "1" ? (
+                              <div>
+                                <img
+                                  className="icon"
+                                  src="/images/Icon/air-conditioning.png"
+                                  alt="icon"
+                                />
+                                <span>Điều hòa</span>
+                              </div>
                             ) : (
                               ""
                             )}
                           </li>
+
                           <li className="mt--12">
                             {this.state.Washing === "1" ? (
-                              <span>Máy Giặt</span>
+                              <div>
+                                <img
+                                  className="icon"
+                                  src="/images/Icon/washing-machine.png"
+                                  alt="icon"
+                                />
+                                <span>Máy Giặt</span>
+                              </div>
                             ) : (
                               ""
                             )}
-                          </li>
-                          <li className="mt--12">
-                            <span>Tủ Lạnh</span>
                           </li>
                         </ul>
                       </div>
@@ -234,7 +265,11 @@ class Detail extends Component {
                   </div>
                 </div>
               </div>
-              <Booking price={this.state.price} name={this.state.name_hotel}></Booking>
+              <Booking
+                price={this.state.price}
+                name={this.state.name_hotel}
+                id={this.state.id}
+              ></Booking>
             </div>
           </div>
         </div>

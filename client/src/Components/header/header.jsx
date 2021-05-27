@@ -26,7 +26,7 @@ class Header extends Component {
         <div class="header__links hide-for-mobile">
           <a href='/'>Home</a>
           <a href='/news'>News</a>
-          <a href='/'>Contact</a>
+          <a href='/contact'>Contact</a>
           <a href='/login'>Sign in</a>
           <a href='/login'>Sign up</a>
         </div>

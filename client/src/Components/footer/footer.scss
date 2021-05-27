@@ -58,7 +58,7 @@ $font-xlg: 3.25rem;
   
     &__logo {
       display: inline-block;
-  
+      
       @include breakpoint-down(medium){
         margin-bottom: 1.875rem;
       }

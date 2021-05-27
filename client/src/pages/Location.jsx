@@ -7,14 +7,22 @@ class Location extends Component {
   state = {
     id: this.props.match.params.id,
     city: "",
+    results:[]
   };
   componentDidMount() {
     if (this.state.id === "1") this.setState({ city: "Hà Nội" });
-    if (this.state.id === "2") this.setState({ city: "HCM" });
+    if (this.state.id === "2") this.setState({ city: "Hồ Chí Minh" });
     if (this.state.id === "3") this.setState({ city: "Đà Nẵng" });
     if (this.state.id === "4") this.setState({ city: "Nha Trang" });
     if (this.state.id === "5") this.setState({ city: "Ninh Bình" });
     console.log(this.state.id);
+    fetch('http://localhost/ISVietNam/api/place')
+    .then(response => { return response.json() })
+    .then(data => {
+      this.setState({
+        results: data.response.place.rows,
+      })
+    })
   }
 
   render() {
@@ -30,7 +38,7 @@ class Location extends Component {
                   <div className="section mt--30">
                     <div className="row">
                       <h2 className="extra-bold col-xs- 12 col-md-9">
-                        50 hotel tại {this.state.city}
+                        {/* 15 địa điểm tại {this.state.city} */}
                       </h2>
                     </div>
                   </div>

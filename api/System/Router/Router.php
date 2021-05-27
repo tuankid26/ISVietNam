@@ -1,19 +1,7 @@
 <?php
 
-/**
- *
- * This file is part of mvc-rest-api for PHP.
- *
- */
 namespace Router;
 
-/**
- * Class Router For Handel Router
- *
- * @author Mohammad Rahmani <rto1680@gmail.com>
- *
- * @package Router
- */
 class Router {
 
     /**

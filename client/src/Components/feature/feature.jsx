@@ -55,7 +55,7 @@ class Feature extends Component {
                 Hồ Chí Minh
             </div>
               <div class="feature__description">
-                {this.count('HCM')} địa điểm
+                {this.count('Hồ Chí Minh')} địa điểm
             </div>
             </a>
 
