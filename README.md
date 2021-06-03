@@ -1,21 +1,19 @@
 # ISVietNam
 
-##Lệnh :
-'''bash
+## Install package
+```bash
 cd client
-'''
+```
 
-'''bash
+```bash
 npm install 
-'''
+```
 
-'''bash
+```bash
 npm start 
-'''
+```
 
-
-
-
-
-API:
+## API:
+```bash
 ${HOST_URI}/home to get data from db to homepage.  
+```
