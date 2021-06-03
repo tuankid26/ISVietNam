@@ -6,7 +6,7 @@ import Footer from '../Components/footer/footer'
 // import img2 from '/images/Image/News/2.jpg'
 // import img3 from '/images/Image/News/3.jpg'
 import Promo from '../Components/promo/promo';
-import './css/Place.css'
+import "./css/Place.css"
 class Place extends Component {
     state = {
         id: this.props.match.params.id,
@@ -56,15 +56,15 @@ class Place extends Component {
                         <p className="td-post-sub-title"> {this.state.destination}</p>
                     </div>
                     <div className="td-post-content">
-                        <div className="container container-md">
+                        <div className="container container-md container-place">
                             <h3>Sơ lược</h3>
                             <p>{this.state.Paragraph_1}</p>
-                            <img alt="img1" src={` ../../images/Image/City/${this.state.ID_place}_1.jpg`} style={{ width: "1024px" }}></img>
+                            <img className='img-place' alt="img1" src={` ../../images/Image/City/${this.state.ID_place}_1.jpg`}></img>
                         </div>
-                        <div className="container container-md ">
+                        <div className="container container-md container-place ">
                             <h3>Giới thiệu về địa điểm</h3>
                             <p>{this.state.Paragraph_2}</p>
-                            <img alt="img2" src={` ../../images/Image/City/${this.state.ID_place}_2.jpg`} style={{ width: "1024px" }}></img>
+                            <img className='img-place' alt="img2" src={` ../../images/Image/City/${this.state.ID_place}_2.jpg`} ></img>
                         </div>
                         {/* <div className="container container-md">
                         

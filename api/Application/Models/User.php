@@ -7,10 +7,12 @@ class ModelsUser extends Model
 {
     public function find_username($username)
     {
+        // $username = $username.replace(/^"(.+(?=")
         $stmt = $this->db->prepare('
             SELECT * from user where username = ?
         ');
-        $stmt->execute(array($username));
+        $stmt->bind_param('sssd', $username);
+        // $stmt->execute(array($username));
         return $stmt->fetchAll();
     }
     public function create_user($data)

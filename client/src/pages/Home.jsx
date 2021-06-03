@@ -7,9 +7,9 @@ import Feature from '../Components/feature/feature.jsx'
 import Article from '../Components/article/article.jsx'
 
 const collection = [
-  { src: '../images/Banner/hanoi.jpg', caption: "Hà Nội " },
-  { src: '../images/Banner/hochiminh.jpg', caption: "Hồ Chí Minh" },
-  { src: '../images/Banner/danang.jpg', caption: "Đà Nẵng" },
+  { src: '../images/Banner/hanoi.jpg', caption: "Hà Nội " , href : 'http://localhost:3000/location/1'},
+  { src: '../images/Banner/hochiminh.jpg', caption: "Hồ Chí Minh",href : 'http://localhost:3000/location/2' },
+  { src: '../images/Banner/danang.jpg', caption: "Đà Nẵng",href : 'http://localhost:3000/location/3' },
 
 ];
 

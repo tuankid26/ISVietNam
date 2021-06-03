@@ -54,20 +54,20 @@ class News extends Component {
                             </div>
                         </div>
                         <div className="td-post-content">
-                            <div className="container container-md">
+                            <div className="container container-md container-new">
                                 {/* <h3>Tên đoạn 1</h3> */}
                                 <p>{this.state.Paragraph_1}</p>
-                                <img alt="img1" src={`../../images/Image/News/${parseInt(this.state.id)+1}_1.jpg`} style={{ width: "auto" }}></img>
+                                <img className="img-new" alt="img1" src={`../../images/Image/News/${parseInt(this.state.id)+1}_1.jpg`} ></img>
                             </div>
-                            <div className="container container-md ">
+                            <div className="container container-md container-new">
                                 {/* <h3>Tên đoạn 2</h3> */}
                                 <p>{this.state.Paragraph_2}</p>
-                                <img alt="img2" src={`../../images/Image/News/${parseInt(this.state.id)+1}_2.jpg`} style={{ width: "auto" }}></img>
+                                <img className="img-new" alt="img2" src={`../../images/Image/News/${parseInt(this.state.id)+1}_2.jpg`} ></img>
                             </div>
-                            <div className="container container-md">
+                            <div className="container container-md container-new">
                                 {/* <h3>Tên đoạn 3</h3> */}
                                 <p>{this.state.Paragraph_3}</p>
-                                <img alt="img3" src={`../../images/Image/News/${parseInt(this.state.id)+1}_3.jpg`} style={{ width: "auto" }}></img>
+                                <img className="img-new" alt="img3" src={`../../images/Image/News/${parseInt(this.state.id)+1}_3.jpg`} ></img>
                             </div>
                         </div>
                     </div>

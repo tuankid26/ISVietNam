@@ -10,6 +10,7 @@ class Header extends Component {
     this.state = {
       query: '',
       data: [],
+      isOpen : false
     }
   }
 
@@ -49,14 +50,14 @@ class Header extends Component {
         <div className='header-top'>
           {/* <div className='container-fix'></div> */}
           <nav className='container container--pall flex flex-jc-sb flex-ai-c'>
-            <a href="/" class="header__logo">
+            <a href="/" className="header__logo">
               <img src='../../../images/Logo/logo.jpg' alt=' ISVietNam' />
             </a>
-            {/* <a id="btnHamburger" href="/" class="header__toggle hide-for-desktop">
+            <div id="btnHamburger"  onClick = {() => {this.setState({isOpen:!this.state.isOpen})}} className="header__toggle hide-for-desktop">
                 <span></span>
                 <span></span>
                 <span></span>
-              </a> */}
+              </div>
             <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4">
               <Search
                 valueSearch={this.state.valueSearch}
@@ -68,13 +69,13 @@ class Header extends Component {
             }
           </nav>
 
-          {/* <div class="header__menu has-fade">
+           {this.state.isOpen ? <div class="header__menu has-fade">
               <a href="/">Home</a>
-              <a href="/">About</a>
-              <a href="/">Contact</a>
-              <a href="/">Blog</a>
-              <a href="/">Careers</a>
-            </div> */}
+              <a href="/news">News</a>
+              <a href="/contact">Contact</a>
+              <a href="/login">SignUp</a>
+              <a href="/login">SignIn</a>
+            </div> : null }
 
         </div>
       </header>

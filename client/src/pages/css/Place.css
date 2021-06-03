@@ -1,3 +1,12 @@
 .place {
     margin-left: 3px;
 }
+.container-place{
+    margin-right: 3rem;
+    margin-left: 2rem;
+}
+.img-place{
+    margin-left: 10%;
+    width: 720px;
+    height: 450px;
+}

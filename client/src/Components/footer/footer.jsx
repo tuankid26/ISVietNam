@@ -32,7 +32,7 @@ class Footer extends Component {
               </div>
           
               <div class="footer__links col1">
-                <a href="/">About Us</a>
+                <a href="/">Home</a>
                 <a href="/contact">Contact</a>
                 <a href="/news">News</a>
               </div>
